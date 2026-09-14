@@ -19,7 +19,6 @@ Object.assign(window.LESSONS, {
     title: "Why the numbers exceeded reality",
     body: "A business made 70 sales in a month. Meta claimed 50, Google claimed 30, email claimed 20, giving 100 claimed sales for 70 real ones. Management assumed someone was inflating figures. Nobody was. Thirty sales had been touched by two or more channels, and each channel counted them. Once the team understood this, they stopped adding platform numbers together and started judging total sales against total spend."
   },
-  example2: null,
   steps: [
     "Accept that channel numbers will exceed real sales when added together.",
     "Use platform attribution to compare ads within that platform only.",
