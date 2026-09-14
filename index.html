@@ -108,6 +108,52 @@ a{color:var(--accent)}
 .dot.seen{border-color:var(--star);background:linear-gradient(90deg,var(--star) 0 50%,transparent 50% 100%)}
 .empty{padding:16px 10px;color:var(--ink-3);font-size:13px}
 
+/* ---------- new update ---------- */
+.updwrap{position:sticky;top:-16px;z-index:5;background:var(--surface);
+  padding:16px 0 10px;margin:-16px 0 4px}
+.upd{width:100%;display:block;text-align:left;cursor:pointer;border-radius:10px;
+  padding:11px 13px;background:var(--star-soft);border:1px solid var(--star)}
+.upd:hover{filter:brightness(0.98)}
+.upd .ut{display:flex;align-items:center;gap:7px;font-weight:600;font-size:14px;color:var(--star)}
+.upd .un{margin-left:auto;font-family:var(--mono);font-size:10.5px;background:var(--star);
+  color:#fff;border-radius:99px;padding:2px 7px}
+:root[data-theme="dark"] .upd .un{color:#221803}
+.upd .us{display:block;font-size:11.5px;color:var(--ink-3);margin-top:4px}
+
+.updbanner{display:block;width:100%;text-align:left;cursor:pointer;background:var(--star-soft);
+  border:1px solid var(--star);border-radius:var(--radius);padding:13px 16px;margin:0 0 22px}
+.updbanner:hover{filter:brightness(0.98)}
+.updbanner .bt{font-weight:600;font-size:13.5px;color:var(--star);display:flex;align-items:center;gap:7px}
+.updbanner .bb{font-size:14px;color:var(--ink-2);margin-top:5px;line-height:1.5}
+
+.srcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.src{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;
+  display:flex;flex-direction:column;gap:7px}
+.src h4{margin:0;font-size:15.5px;font-weight:600}
+.src h4 a{text-decoration:none}
+.src h4 a:hover{text-decoration:underline}
+.src p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.src .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.src .tag{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:99px;padding:3px 8px;color:var(--ink-3)}
+
+.entry{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--star);
+  border-radius:var(--radius);padding:16px 18px;margin-bottom:12px}
+.entry.read{border-left-color:var(--line-2);opacity:.75}
+.entry .eh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.entry .ed{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.entry h4{margin:0;font-family:var(--serif);font-size:18px;font-weight:600;flex:1;min-width:200px}
+.entry p{margin:0 0 10px;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.entry p b{color:var(--ink)}
+.entry .aff{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:11px;
+  padding-top:11px;border-top:1px solid var(--line)}
+.entry .aff .lb{font-size:12px;color:var(--ink-3);margin-right:2px}
+.entry .aff button{background:var(--surface-2);border:1px solid var(--line);border-radius:99px;
+  padding:4px 11px;font-size:12.5px;cursor:pointer}
+.entry .aff button:hover{border-color:var(--star)}
+.entry .rd{background:none;border:0;color:var(--ink-3);font-size:12.5px;cursor:pointer;
+  text-decoration:underline;padding:2px;margin-left:auto}
+
 .setrow{display:flex;flex-direction:column;gap:5px;padding:12px 8px 4px;margin-top:10px;border-top:1px solid var(--line)}
 .setrow label{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
 .setrow select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;
@@ -345,6 +391,12 @@ textarea.notes::placeholder{color:var(--ink-3)}
         <div class="lbl" id="sidecount">0 of 341 lessons complete</div>
       </div>
     </div>
+    <div class="updwrap">
+      <button class="upd" id="updbtn">
+        <span class="ut">🆕 New Update<span class="un" id="updcount">0</span></span>
+        <span class="us" id="updwhen">Official sources · never checked</span>
+      </button>
+    </div>
     <button class="homebtn" id="homebtn">📊 Progress dashboard</button>
     <div class="chips" id="chips">
       <button class="chip" data-f="all" aria-pressed="true">All</button>
@@ -369,6 +421,7 @@ textarea.notes::placeholder{color:var(--ink-3)}
 
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
+<script src="data/updates.js"></script>
 <script src="data/outline.js"></script>
 <script src="data/m01.js"></script>
 <script src="data/m02.js"></script>
@@ -476,6 +529,34 @@ function currentRank(){
   return r;
 }
 function isOpen(id){ var r = S[id]; return !!(r && r.seen && !r.done); }
+
+/* ---------- new update ---------- */
+var SOURCES = window.UPDATE_SOURCES || [], LOG = window.UPDATE_LOG || [];
+function updRead(){ try{ return JSON.parse(localStorage.getItem(KEY+"-updread")) || []; }catch(e){ return []; } }
+function isRead(t){ return updRead().indexOf(t) >= 0; }
+function markRead(t, on){
+  var a = updRead(), i = a.indexOf(t);
+  if(on && i < 0) a.push(t);
+  if(!on && i >= 0) a.splice(i, 1);
+  try{ localStorage.setItem(KEY+"-updread", JSON.stringify(a)); }catch(e){}
+}
+function lastChecked(){ try{ return localStorage.getItem(KEY+"-updcheck"); }catch(e){ return null; } }
+function daysSince(iso){ return iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86400000) : null; }
+function updatesFor(id){
+  return LOG.filter(function(e){ return e.lessons && e.lessons.indexOf(id) >= 0; });
+}
+function updBits(){
+  var unread = LOG.filter(function(e){ return !isRead(e.title); }).length;
+  var c = document.getElementById("updcount");
+  c.textContent = unread ? unread : "✓";
+  c.style.background = unread ? "" : "var(--good)";
+  var d = daysSince(lastChecked()), w = document.getElementById("updwhen");
+  w.textContent = d === null ? "Official sources · never checked"
+    : d === 0 ? "Official sources · checked today"
+    : d === 1 ? "Official sources · checked yesterday"
+    : d < 30  ? "Official sources · checked " + d + " days ago"
+    :           "Official sources · " + d + " days ago, worth a look";
+}
 
 /* highest level whose lessons are all written */
 function readyThrough(){
@@ -667,6 +748,72 @@ function listBlock(em,title,arr,emptyMsg){
   return h + '</div></section>';
 }
 
+/* ---------- new update page ---------- */
+function renderUpdates(){
+  var d = daysSince(lastChecked());
+  var h = '<div class="wrap dash">';
+  h += '<h2>🆕 New Update</h2>';
+  h += '<p class="lede">Meta changes something most weeks. This page does not fetch those changes by '
+    +  'itself: a page that quietly shows out of date news is worse than none. Instead it keeps the '
+    +  'official sources one tap away, and records what you find against the lessons it affects.</p>';
+
+  h += '<div class="hero" style="display:block"><div class="headline" style="font-size:22px">'
+    +  (d === null ? "You have not checked the sources yet"
+       : d === 0 ? "You checked the sources today"
+       : "Last checked " + d + " day" + (d === 1 ? "" : "s") + " ago")
+    +  '</div><div class="sub">A monthly look at the changelog and your own Ads Manager notifications '
+    +  'catches almost everything that matters.</div>'
+    +  '<button class="cont" id="checked">I have checked the sources today</button></div>';
+
+  h += '<section class="block" style="margin-top:26px"><h3 class="bh"><span class="em">🔗</span>'
+    +  'Official Meta sources</h3><div class="srcgrid">';
+  SOURCES.forEach(function(s){
+    h += '<div class="src"><h4><a href="' + s.url + '" target="_blank" rel="noopener">'
+      +  esc(s.name) + ' ↗</a></h4><p>' + esc(s.what) + '</p>'
+      +  '<div class="meta"><span class="tag">Check: ' + esc(s.check) + '</span>'
+      +  '<span class="tag">' + esc(s.affects) + '</span></div></div>';
+  });
+  h += '</div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">📋</span>Update log</h3>';
+  if(!LOG.length){
+    h += '<div class="listcard"><p class="nothing">Nothing recorded yet. Add entries to '
+      +  '<b>data/updates.js</b> as you find changes.</p></div>';
+  }else{
+    LOG.forEach(function(e, i){
+      var read = isRead(e.title);
+      h += '<div class="entry' + (read ? " read" : "") + '">'
+        +  '<div class="eh"><span class="ed">' + esc(e.date) + '</span>'
+        +  '<h4>' + esc(e.title) + '</h4>'
+        +  '<button class="rd" data-read="' + i + '">' + (read ? "Mark unread" : "Mark read") + '</button></div>'
+        +  '<p>' + esc(e.what) + '</p>'
+        +  '<p><b>What it means for this course.</b> ' + esc(e.why) + '</p>';
+      if(e.lessons && e.lessons.length){
+        h += '<div class="aff"><span class="lb">Affects:</span>';
+        e.lessons.forEach(function(lid){
+          var L = BY_ID[lid];
+          if(L) h += '<button data-go="' + lid + '">' + lid + ' · ' + esc(L.title) + '</button>';
+        });
+        h += '</div>';
+      }
+      h += '</div>';
+    });
+  }
+  h += '</section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">✍️</span>Recording what you find</h3>'
+    +  '<div class="example"><h4>How to add an entry</h4><p>Open <b>data/updates.js</b> and add a block '
+    +  'to the log: the date, what changed, what it means for the course, and the lesson numbers it '
+    +  'affects. Any lesson you list will then show a banner at the top pointing readers here, so the '
+    +  'update reaches them exactly where it is relevant.</p></div></section>';
+
+  document.getElementById("main").innerHTML = h + '</div>';
+  document.getElementById("checked").addEventListener("click", function(){
+    try{ localStorage.setItem(KEY+"-updcheck", new Date().toISOString()); }catch(e){}
+    updBits(); renderUpdates();
+  });
+}
+
 /* ---------- lesson ---------- */
 function renderLesson(id){
   var L = BY_ID[id]; if(!L){ renderDash(); return; }
@@ -684,6 +831,16 @@ function renderLesson(id){
     +  btn("imp","⭐","Mark as important","Important", r.imp)
     +  btn("book","🔖","Bookmark","Bookmarked", r.book)
     +  '</div>';
+
+  var ups = updatesFor(id).filter(function(e){ return !isRead(e.title); });
+  if(ups.length){
+    h += '<button class="updbanner" data-go="updates">'
+      +  '<span class="bt">🆕 ' + ups.length + ' update'
+      +  (ups.length === 1 ? "" : "s") + ' affect' + (ups.length === 1 ? "s" : "") + ' this lesson</span>'
+      +  '<span class="bb">' + esc(ups[0].title)
+      +  (ups.length > 1 ? ', and ' + (ups.length - 1) + ' more' : '')
+      +  '. Tap to read what changed.</span></button>';
+  }
 
   if(!c){
     var rt = readyThrough();
@@ -1034,6 +1191,7 @@ document.getElementById("toast").addEventListener("click", function(e){
 function go(id){
   if(current && current !== id) handleNavigation(current, id);
   if(id === "dash"){ current = null; renderDash(); }
+  else if(id === "updates"){ current = null; renderUpdates(); }
   else renderLesson(id);
   renderTree();
   closeSide();
@@ -1061,6 +1219,12 @@ document.addEventListener("click", function(e){
     openMod = {}; openMod[first.mod] = true;
     go(first.id); return;
   }
+  var rd = e.target.closest("[data-read]");
+  if(rd){
+    var entry = LOG[+rd.dataset.read];
+    markRead(entry.title, !isRead(entry.title));
+    updBits(); renderUpdates(); return;
+  }
   var tb = e.target.closest("[data-tier-go]");
   if(tb){
     var ti = +tb.dataset.tierGo, ls = tierLessons(ti);
@@ -1078,6 +1242,7 @@ document.addEventListener("click", function(e){
 });
 
 document.getElementById("homebtn").addEventListener("click", function(){ go("dash"); });
+document.getElementById("updbtn").addEventListener("click", function(){ go("updates"); });
 document.getElementById("menubtn").addEventListener("click", openSide);
 document.getElementById("sideclose").addEventListener("click", closeSide);
 
@@ -1120,6 +1285,7 @@ try{
 }catch(e){}
 document.getElementById("brandsub").textContent = TOTAL + " lessons · 38 modules · 10 levels";
 renderProgressBits();
+updBits();
 renderTree();
 renderDash();
 })();
