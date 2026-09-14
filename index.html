@@ -823,7 +823,8 @@ function renderLesson(id){
   if(!r.seen){ r.seen = true; save(); }
   var h = '<div class="wrap">';
   h += '<div class="eyebrow">Level '+L.lvl+' · '+esc(L.lvlTitle)+' &nbsp;/&nbsp; Module '+pad(L.mod)+' · '
-    +  esc(L.modTitle)+' &nbsp;/&nbsp; Lesson '+pad(L.num)+'</div>';
+    +  esc(L.modTitle)+' &nbsp;/&nbsp; Lesson '+pad(L.num)
+    +  ' &nbsp;/&nbsp; <b title="Use this id when tagging an update">id '+L.id+'</b></div>';
   h += '<h2 class="ltitle">'+esc(L.title)+'</h2>';
 
   h += '<div class="actions">'

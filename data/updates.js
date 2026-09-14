@@ -1,6 +1,59 @@
-/* Official sources and the update log.
-   Meta changes weekly. This file is meant to be edited: add a LOG entry whenever
-   you find something that changes what a lesson teaches, and tag the lessons it affects. */
+/* ============================================================================
+   OFFICIAL SOURCES AND THE UPDATE LOG
+
+   Meta changes weekly. This file is meant to be edited. Add an entry to
+   UPDATE_LOG whenever you find something that changes what a lesson teaches.
+
+   ----------------------------------------------------------------------------
+   TO ADD AN UPDATE
+
+   1. Copy the template below.
+   2. Paste it at the TOP of the UPDATE_LOG list, just after the [ bracket,
+      so the newest entry appears first.
+   3. Fill in the five fields.
+   4. Save the file and refresh the course in your browser.
+
+   The lesson ids you list in "lessons" decide where the update appears. Every
+   lesson you name shows a banner at the top pointing the reader here. You can
+   find a lesson id at the top of any lesson page, shown as "id 5.17.4".
+
+   ----------------------------------------------------------------------------
+   TEMPLATE  (copy everything between the lines, including the comma)
+
+  {
+    date: "15 September 2026",
+    kind: "update",
+    title: "Short plain statement of what changed",
+    what: "What Meta actually changed, in one or two sentences. Stick to the facts as published. Say where you read it.",
+    why: "What this means for someone following the course. Which lesson is now out of date, and what they should do differently.",
+    lessons: ["5.17.4", "5.17.5"]
+  },
+
+   ----------------------------------------------------------------------------
+   FIELD NOTES
+
+   date     Any readable date. It is displayed exactly as you type it.
+   kind     "update"   something that has genuinely changed
+            "baseline" background that was true when the course was written
+   title    Say what changed, not that something changed. Good: "Attribution
+            window options reduced to seven days". Poor: "Important update".
+   what     The facts only. Resist adding opinion here.
+   why      The opinion belongs here. This is the field readers value most,
+            because it connects the news to the lesson they are reading.
+   lessons  A list of ids in quotes. Leave it as [] if nothing specific is
+            affected; the entry still appears on the New Update page.
+
+   ----------------------------------------------------------------------------
+   WHAT IS WORTH RECORDING
+
+   Record it if a reader following the course would now do something different:
+   a setting that moved or disappeared, a limit that changed, a policy revision,
+   a metric that is calculated differently, a feature that replaces another.
+
+   Do not record product announcements that change nothing in practice, features
+   in limited testing you cannot access, or general industry commentary. A log of
+   twelve entries that each matter is worth more than a hundred that do not.
+   ============================================================================ */
 
 window.UPDATE_SOURCES = [
   {
