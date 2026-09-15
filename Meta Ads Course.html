@@ -1,0 +1,1293 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Ads Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --ground:#F1F4F1; --surface:#FFFFFF; --surface-2:#E9EEEA; --surface-3:#DFE6E0;
+  --ink:#161C1A; --ink-2:#495450; --ink-3:#73807A;
+  --line:#D7DFD8; --line-2:#C3CEC5;
+  --accent:#0E6A5A; --accent-2:#0B5346; --accent-soft:#DCEDE8;
+  --star:#9A6206; --star-soft:#F7EBD6;
+  --mark:#1B5A99; --mark-soft:#DEEAF6;
+  --good:#2C7448; --bad:#A33A2C; --bad-soft:#F7E2DE;
+  --shadow:0 1px 2px rgba(16,34,28,.06), 0 8px 24px rgba(16,34,28,.06);
+  --radius:10px;
+  --sans:"IBM Plex Sans", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#101514; --surface:#191F1D; --surface-2:#212928; --surface-3:#2A3331;
+    --ink:#E7EDEA; --ink-2:#AFBBB7; --ink-3:#84918C;
+    --line:#2B3432; --line-2:#3A4543;
+    --accent:#4EC6AB; --accent-2:#6FD7BF; --accent-soft:#16312C;
+    --star:#DFA945; --star-soft:#33280F;
+    --mark:#79B2E8; --mark-soft:#14283A;
+    --good:#5FBF86; --bad:#E2796A; --bad-soft:#3A1F1B;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#101514; --surface:#191F1D; --surface-2:#212928; --surface-3:#2A3331;
+  --ink:#E7EDEA; --ink-2:#AFBBB7; --ink-3:#84918C;
+  --line:#2B3432; --line-2:#3A4543;
+  --accent:#4EC6AB; --accent-2:#6FD7BF; --accent-soft:#16312C;
+  --star:#DFA945; --star-soft:#33280F;
+  --mark:#79B2E8; --mark-soft:#14283A;
+  --good:#5FBF86; --bad:#E2796A; --bad-soft:#3A1F1B;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+/* ---------- shell ---------- */
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;
+  padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:10px;min-width:0}
+.brand h1{margin:0;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.brand .sub{font-family:var(--mono);font-size:11px;color:var(--ink-3);white-space:nowrap}
+.top .spacer{flex:1}
+.iconbtn{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:7px 11px;cursor:pointer;font-size:13px;line-height:1}
+.iconbtn:hover{border-color:var(--line-2)}
+.menubtn{display:none}
+.topsearch{position:relative}
+.topsearch input{width:200px;padding:7px 10px 7px 30px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);font-size:14px}
+.topsearch::before{content:"⌕";position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:15px}
+
+.layout{display:grid;grid-template-columns:326px minmax(0,1fr);align-items:start}
+
+/* ---------- sidebar ---------- */
+.side{position:sticky;top:53px;height:calc(100vh - 53px);overflow-y:auto;overscroll-behavior:contain;
+  background:var(--surface);border-right:1px solid var(--line);padding:16px 12px 48px}
+.sideclose{display:none}
+.ringrow{display:flex;align-items:center;gap:14px;padding:4px 6px 14px}
+.ring{flex:none}
+.ringrow .big{font-family:var(--mono);font-size:22px;font-weight:500;line-height:1.1}
+.ringrow .lbl{font-size:12px;color:var(--ink-3);margin-top:2px}
+.homebtn{width:100%;text-align:left;background:var(--accent-soft);border:1px solid transparent;color:var(--accent-2);
+  border-radius:8px;padding:9px 12px;cursor:pointer;font-size:14px;font-weight:500;margin-bottom:12px}
+:root[data-theme="dark"] .homebtn,:root:not([data-theme="light"]) .homebtn{color:var(--accent)}
+.homebtn:hover{border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 2px 12px}
+.chip{background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:12px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#0B1917}
+
+.lvl{margin-bottom:2px}
+.lvlhead,.modhead{width:100%;display:flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;
+  text-align:left;padding:8px 8px;border-radius:8px}
+.lvlhead:hover,.modhead:hover{background:var(--surface-2)}
+.lvlhead{font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.lvlhead .num{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-weight:400}
+.lvlhead .pct{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.caret{width:9px;flex:none;color:var(--ink-3);transition:transform .15s}
+.caret.open{transform:rotate(90deg)}
+.mods{padding-left:6px;border-left:1px solid var(--line);margin-left:14px}
+.modhead{font-size:14px;color:var(--ink)}
+.modhead .mnum{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.modhead .frac{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.lessons{list-style:none;margin:0 0 6px;padding:0 0 0 22px}
+.lrow{width:100%;display:flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;
+  text-align:left;padding:6px 8px;border-radius:7px;font-size:13.5px;color:var(--ink-2);line-height:1.35}
+.lrow:hover{background:var(--surface-2);color:var(--ink)}
+.lrow[aria-current="true"]{background:var(--accent-soft);color:var(--ink);font-weight:500}
+.lrow .ln{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);flex:none;width:16px}
+.lrow .flags{margin-left:auto;display:flex;gap:3px;font-size:11px;flex:none}
+.lrow.done .lt{color:var(--ink-3)}
+.dot{width:7px;height:7px;border-radius:50%;border:1.5px solid var(--line-2);flex:none}
+.dot.on{background:var(--accent);border-color:var(--accent)}
+.dot.seen{border-color:var(--star);background:linear-gradient(90deg,var(--star) 0 50%,transparent 50% 100%)}
+.empty{padding:16px 10px;color:var(--ink-3);font-size:13px}
+
+/* ---------- new update ---------- */
+.updwrap{position:sticky;top:-16px;z-index:5;background:var(--surface);
+  padding:16px 0 10px;margin:-16px 0 4px}
+.upd{width:100%;display:block;text-align:left;cursor:pointer;border-radius:10px;
+  padding:11px 13px;background:var(--star-soft);border:1px solid var(--star)}
+.upd:hover{filter:brightness(0.98)}
+.upd .ut{display:flex;align-items:center;gap:7px;font-weight:600;font-size:14px;color:var(--star)}
+.upd .un{margin-left:auto;font-family:var(--mono);font-size:10.5px;background:var(--star);
+  color:#fff;border-radius:99px;padding:2px 7px}
+:root[data-theme="dark"] .upd .un{color:#221803}
+.upd .us{display:block;font-size:11.5px;color:var(--ink-3);margin-top:4px}
+
+.updbanner{display:block;width:100%;text-align:left;cursor:pointer;background:var(--star-soft);
+  border:1px solid var(--star);border-radius:var(--radius);padding:13px 16px;margin:0 0 22px}
+.updbanner:hover{filter:brightness(0.98)}
+.updbanner .bt{font-weight:600;font-size:13.5px;color:var(--star);display:flex;align-items:center;gap:7px}
+.updbanner .bb{font-size:14px;color:var(--ink-2);margin-top:5px;line-height:1.5}
+
+.srcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.src{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;
+  display:flex;flex-direction:column;gap:7px}
+.src h4{margin:0;font-size:15.5px;font-weight:600}
+.src h4 a{text-decoration:none}
+.src h4 a:hover{text-decoration:underline}
+.src p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.src .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.src .tag{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:99px;padding:3px 8px;color:var(--ink-3)}
+
+.entry{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--star);
+  border-radius:var(--radius);padding:16px 18px;margin-bottom:12px}
+.entry.read{border-left-color:var(--line-2);opacity:.75}
+.entry .eh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.entry .ed{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.entry h4{margin:0;font-family:var(--serif);font-size:18px;font-weight:600;flex:1;min-width:200px}
+.entry p{margin:0 0 10px;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.entry p b{color:var(--ink)}
+.entry .aff{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:11px;
+  padding-top:11px;border-top:1px solid var(--line)}
+.entry .aff .lb{font-size:12px;color:var(--ink-3);margin-right:2px}
+.entry .aff button{background:var(--surface-2);border:1px solid var(--line);border-radius:99px;
+  padding:4px 11px;font-size:12.5px;cursor:pointer}
+.entry .aff button:hover{border-color:var(--star)}
+.entry .rd{background:none;border:0;color:var(--ink-3);font-size:12.5px;cursor:pointer;
+  text-decoration:underline;padding:2px;margin-left:auto}
+
+.setrow{display:flex;flex-direction:column;gap:5px;padding:12px 8px 4px;margin-top:10px;border-top:1px solid var(--line)}
+.setrow label{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.setrow select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface-2);font-size:13px}
+
+/* ---------- nudge ---------- */
+.toast .tskip{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-direction:column;gap:3px;
+  max-height:146px;overflow-y:auto}
+.toast .tskip button{width:100%;display:flex;gap:9px;text-align:left;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:7px;padding:7px 10px;cursor:pointer;font-size:13px;line-height:1.35}
+.toast .tskip button:hover{border-color:var(--star)}
+.toast .tskip .c{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);flex:none;padding-top:2px}
+.toast .more{font-size:12.5px;color:var(--ink-3);margin:0 0 12px;font-style:italic}
+.toast.skip{border-left-color:var(--bad)}
+
+.toast{position:fixed;left:16px;bottom:16px;z-index:80;max-width:400px;
+  background:var(--surface);border:1px solid var(--line-2);border-left:3px solid var(--star);
+  border-radius:12px;padding:15px 17px;box-shadow:var(--shadow)}
+@media (min-width:901px){ .toast{left:auto;right:20px;bottom:20px} }
+.toast .th{font-family:var(--serif);font-size:17px;font-weight:600;margin:0 0 5px;display:flex;gap:8px;align-items:baseline}
+.toast .tb{margin:0 0 13px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.toast .tb b{color:var(--ink);font-weight:600}
+.toast .tr{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toast .yes{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:8px 14px;
+  cursor:pointer;font-size:13.5px;font-weight:500}
+:root[data-theme="dark"] .toast .yes{color:#0B1917}
+.toast .no{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;
+  padding:8px 14px;cursor:pointer;font-size:13.5px}
+.toast .off{background:none;border:0;color:var(--ink-3);font-size:12.5px;cursor:pointer;
+  text-decoration:underline;margin-left:auto;padding:4px}
+.toast.done{border-left-color:var(--accent)}
+
+/* ---------- main ---------- */
+.main{padding:28px 32px 96px;min-width:0}
+.wrap{max-width:720px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+h2.ltitle{font-family:var(--serif);font-size:clamp(28px,4.4vw,40px);line-height:1.14;font-weight:600;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+.intro{font-size:18px;line-height:1.62;color:var(--ink-2);margin:0 0 22px}
+.body p{margin:0 0 16px}
+
+.actions{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0 22px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.act{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);
+  border-radius:999px;padding:8px 14px;cursor:pointer;font-size:13.5px;font-weight:500;white-space:nowrap}
+.act:hover{border-color:var(--line-2)}
+.act .em{font-size:14px;line-height:1}
+.act[aria-pressed="true"].done{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .act[aria-pressed="true"].done{color:#0B1917}
+.act[aria-pressed="true"].imp{background:var(--star-soft);border-color:var(--star);color:var(--star)}
+.act[aria-pressed="true"].book{background:var(--mark-soft);border-color:var(--mark);color:var(--mark)}
+
+section.block{margin:0 0 30px}
+h3.bh{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:12.5px;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px}
+h3.bh .em{font-size:15px}
+h3.bh::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.plainbox{background:var(--accent-soft);border-radius:var(--radius);padding:16px 18px}
+.plainbox p{margin:0 0 12px;font-size:17px;line-height:1.62}
+.plainbox p:last-child{margin:0}
+
+.example{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:var(--radius);padding:16px 18px}
+.example h4{margin:0 0 8px;font-family:var(--serif);font-size:18px;font-weight:600}
+.example p{margin:0;color:var(--ink-2)}
+
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-size:12px;color:var(--accent);
+  background:var(--accent-soft);border-radius:6px;height:24px;display:grid;place-items:center;font-weight:500}
+ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+ul.plain li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start}
+ul.plain li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--line-2);margin-top:9px}
+ul.mistakes li::before{content:"×";width:auto;height:auto;background:none;color:var(--bad);font-size:16px;
+  line-height:1.3;font-weight:600;border-radius:0}
+ul.take li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px}
+
+.words{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.word{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:14px;padding:10px 14px;background:var(--surface)}
+.word + .word{border-top:1px solid var(--line)}
+.word dt{font-weight:600;font-size:14px}
+.word dd{margin:0;color:var(--ink-2);font-size:14.5px}
+
+.takebox{background:var(--accent-soft);border-radius:var(--radius);padding:16px 18px}
+.takebox ul.take li::before{background:var(--accent)}
+
+.checks{display:flex;flex-direction:column;gap:4px}
+.check{display:flex;gap:11px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface);cursor:pointer}
+.check input{margin:4px 0 0;width:16px;height:16px;accent-color:var(--accent);flex:none;cursor:pointer}
+.check.on{border-color:var(--accent);background:var(--accent-soft)}
+
+.q{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:15px 17px;margin-bottom:12px}
+.q .qt{font-weight:600;margin:0 0 11px;display:grid;grid-template-columns:22px 1fr;gap:8px}
+.q .qt .qn{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:3px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;
+  padding:9px 12px;cursor:pointer;font-size:14.5px}
+.opt:hover:not(:disabled){border-color:var(--line-2)}
+.opt:disabled{cursor:default}
+.opt.right{background:var(--accent-soft);border-color:var(--accent);font-weight:500}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.why{margin:10px 0 0;font-size:14px;color:var(--ink-2);padding-left:12px;border-left:2px solid var(--line-2)}
+.score{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink-2)}
+.score b{font-family:var(--mono);font-weight:500;color:var(--ink)}
+.linkbtn{background:none;border:0;color:var(--accent);cursor:pointer;font-size:13.5px;padding:0;text-decoration:underline}
+
+.task{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.task p{margin:0 0 12px}
+.task .hint{font-size:14px;color:var(--ink-3);font-style:italic;margin-bottom:12px}
+.taskdone{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-size:14px;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.taskdone input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer;margin:0}
+.taskdone.on{background:var(--accent-soft);border-color:var(--accent)}
+.challenge{border-left:3px solid var(--star)}
+
+/* ---------- mastery ---------- */
+.mastery{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--star);
+  border-radius:var(--radius);padding:17px 19px}
+.mastery .mtop{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:11px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--star-soft);color:var(--star);
+  border:1px solid var(--star);border-radius:999px;padding:6px 15px;font-weight:600;font-size:14.5px}
+.mastery .mnum{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.mastery .mdesc{margin:0 0 15px;color:var(--ink-2);font-size:14.5px;line-height:1.55}
+.ladder{display:flex;gap:3px;margin-bottom:6px}
+.rung{flex:1;height:7px;border-radius:99px;background:var(--surface-3)}
+.rung.filled{background:var(--accent)}
+.rung.here{background:var(--star)}
+.ladnames{display:flex;gap:3px;margin-bottom:15px}
+.ladnames span{flex:1;text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.02em;
+  text-transform:uppercase;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ladnames span.here{color:var(--star);font-weight:500}
+.mprog{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--ink-2)}
+.mprog .bar{flex:1;min-width:60px}
+.mprog .fr{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+.rankline{margin:13px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+.rankline b{color:var(--ink)}
+@media (max-width:560px){ .ladnames{display:none} }
+
+textarea.notes{width:100%;min-height:150px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);resize:vertical;line-height:1.6;font-size:15px}
+textarea.notes::placeholder{color:var(--ink-3)}
+.saved{font-size:12.5px;color:var(--ink-3);font-family:var(--mono);height:18px;margin-top:6px}
+
+.pager{display:flex;gap:10px;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;margin-top:34px}
+.pg{flex:1;max-width:330px;text-align:left;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:11px 14px;cursor:pointer}
+.pg:hover{border-color:var(--line-2)}
+.pg.next{text-align:right}
+.pg .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:3px}
+.pg .t{font-size:14px;line-height:1.35}
+.pg:disabled{opacity:.4;cursor:default}
+
+.soon{background:var(--surface);border:1px dashed var(--line-2);border-radius:var(--radius);padding:20px 22px;color:var(--ink-2)}
+.soon b{color:var(--ink)}
+
+/* ---------- dashboard ---------- */
+.dash h2{font-family:var(--serif);font-size:clamp(28px,4.4vw,38px);font-weight:600;margin:0 0 6px;letter-spacing:-.015em}
+.dash .lede{color:var(--ink-2);font-size:17px;margin:0 0 26px;max-width:60ch}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:var(--surface);
+  border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow)}
+.hero .headline{font-family:var(--mono);font-size:34px;font-weight:500;line-height:1;letter-spacing:-.02em}
+.hero .sub{color:var(--ink-2);margin-top:7px;font-size:14.5px}
+.hero .cont{margin-top:14px;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 16px;
+  cursor:pointer;font-size:14px;font-weight:500}
+:root[data-theme="dark"] .hero .cont{color:#0B1917}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin-bottom:30px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:13px 15px}
+.tile .n{font-family:var(--mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.tile .l{font-size:12.5px;color:var(--ink-3);margin-top:2px;display:flex;align-items:center;gap:5px}
+.lvlbars{display:flex;flex-direction:column;gap:2px}
+.lvlbar{display:grid;grid-template-columns:26px minmax(0,1fr) 74px 46px;gap:12px;align-items:center;
+  padding:9px 10px;border-radius:8px;cursor:pointer;background:none;border:0;text-align:left;width:100%}
+.lvlbar:hover{background:var(--surface-2)}
+.lvlbar .lv{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.lvlbar .nm{font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.lvlbar .fr{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+.listcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.listrow{width:100%;display:flex;gap:10px;align-items:center;background:none;border:0;text-align:left;
+  padding:11px 14px;cursor:pointer;font-size:14.5px}
+.listrow:hover{background:var(--surface-2)}
+.listrow + .listrow{border-top:1px solid var(--line)}
+.listrow .code{font-family:var(--mono);font-size:11px;color:var(--ink-3);flex:none}
+.listrow .snip{color:var(--ink-3);font-size:13px;margin-left:auto;max-width:40%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nothing{padding:15px;color:var(--ink-3);font-size:14px}
+.twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .menubtn{display:inline-block}
+  .topsearch input{width:130px}
+  .side{position:fixed;inset:53px auto 0 0;width:300px;max-width:86vw;z-index:50;transform:translateX(-104%);
+    transition:transform .2s ease;box-shadow:var(--shadow);height:calc(100vh - 53px)}
+  .side.open{transform:none}
+  .sideclose{display:block;width:100%;margin-bottom:10px}
+  .main{padding:22px 18px 90px}
+  .scrim{position:fixed;inset:53px 0 0;background:rgba(10,20,18,.4);z-index:45;border:0}
+}
+@media (max-width:480px){
+  .brand .sub{display:none}
+  .hero{grid-template-columns:1fr;gap:16px}
+  .lvlbar{grid-template-columns:24px minmax(0,1fr) 44px;}
+  .lvlbar .bar{display:none}
+  .pager{flex-direction:column}
+  .pg{max-width:none}
+}
+</style>
+
+<header class="top">
+  <button class="iconbtn menubtn" id="menubtn" aria-label="Open course menu">☰</button>
+  <div class="brand">
+    <h1>Meta Ads Mastery</h1>
+    <span class="sub" id="brandsub">341 lessons · 38 modules · 10 levels</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="topsearch">
+    <input id="search" type="search" placeholder="Search lessons" aria-label="Search lessons">
+  </div>
+  <button class="iconbtn" id="themebtn" aria-label="Switch light or dark mode">◐</button>
+</header>
+
+<div class="layout">
+  <nav class="side" id="side" aria-label="Course contents">
+    <button class="iconbtn sideclose" id="sideclose">Close menu</button>
+    <div class="ringrow">
+      <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+        <circle cx="29" cy="29" r="24" fill="none" stroke="var(--surface-3)" stroke-width="6"></circle>
+        <circle id="ringfill" cx="29" cy="29" r="24" fill="none" stroke="var(--accent)" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="150.8"
+          transform="rotate(-90 29 29)"></circle>
+      </svg>
+      <div>
+        <div class="big" id="sidepct">0%</div>
+        <div class="lbl" id="sidecount">0 of 341 lessons complete</div>
+      </div>
+    </div>
+    <div class="updwrap">
+      <button class="upd" id="updbtn">
+        <span class="ut">🆕 New Update<span class="un" id="updcount">0</span></span>
+        <span class="us" id="updwhen">Official sources · never checked</span>
+      </button>
+    </div>
+    <button class="homebtn" id="homebtn">📊 Progress dashboard</button>
+    <div class="chips" id="chips">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="done" aria-pressed="false">✅ Done</button>
+      <button class="chip" data-f="imp" aria-pressed="false">⭐ Important</button>
+      <button class="chip" data-f="book" aria-pressed="false">🔖 Saved</button>
+      <button class="chip" data-f="note" aria-pressed="false">📝 Notes</button>
+      <button class="chip" data-f="open" aria-pressed="false">◐ Unfinished</button>
+    </div>
+    <div id="tree"></div>
+    <div class="setrow">
+      <label for="leaveset">When I leave a lesson unmarked</label>
+      <select id="leaveset">
+        <option value="warn">Remind me before I move on</option>
+        <option value="auto">Mark it complete automatically</option>
+        <option value="off">Do nothing</option>
+      </select>
+    </div>
+  </nav>
+  <main class="main" id="main"></main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="data/updates.js"></script>
+<script src="data/outline.js"></script>
+<script src="data/m01.js"></script>
+<script src="data/m02.js"></script>
+<script src="data/m03.js"></script>
+<script src="data/m04.js"></script>
+<script src="data/m05.js"></script>
+<script src="data/m06.js"></script>
+<script src="data/m07.js"></script>
+<script src="data/m08.js"></script>
+<script src="data/m09.js"></script>
+<script src="data/m10.js"></script>
+<script src="data/m11.js"></script>
+<script src="data/m12.js"></script>
+<script src="data/m13.js"></script>
+<script src="data/m14.js"></script>
+<script src="data/m15.js"></script>
+<script src="data/m16.js"></script>
+<script src="data/m17.js"></script>
+<script src="data/m18.js"></script>
+<script src="data/m19.js"></script>
+<script src="data/m20.js"></script>
+<script src="data/m21.js"></script>
+<script src="data/m22.js"></script>
+<script src="data/m23.js"></script>
+<script src="data/m24.js"></script>
+<script src="data/m25.js"></script>
+<script src="data/m26.js"></script>
+<script src="data/m27.js"></script>
+<script src="data/m28.js"></script>
+<script src="data/m29.js"></script>
+<script src="data/m30.js"></script>
+<script src="data/m31.js"></script>
+<script src="data/m32.js"></script>
+<script src="data/m33.js"></script>
+<script src="data/m34.js"></script>
+<script src="data/m35.js"></script>
+<script src="data/m36.js"></script>
+<script src="data/m37.js"></script>
+<script src="data/m38.js"></script>
+<script>
+(function(){
+"use strict";
+var OUT = window.COURSE_OUTLINE || [], LESSONS = window.LESSONS || {};
+var KEY = "meta-ads-mastery-v1";
+var S = {};            /* saved state, keyed by lesson id */
+var filter = "all", query = "", current = null, openLvl = {1:true}, openMod = {1:true};
+
+/* ---------- storage ---------- */
+function load(){ try{ S = JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ S = {}; } }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function rec(id){ if(!S[id]) S[id] = {}; return S[id]; }
+function has(id,k){ return !!(S[id] && S[id][k]); }
+
+/* ---------- index ---------- */
+var FLAT = [];   /* every lesson in order */
+OUT.forEach(function(L){
+  L.modules.forEach(function(M){
+    M.lessons.forEach(function(t,i){
+      FLAT.push({ id:L.n+"."+M.n+"."+(i+1), lvl:L.n, lvlTitle:L.title, mod:M.n,
+                  modTitle:M.title, num:i+1, title:t, idx:FLAT.length });
+    });
+  });
+});
+var BY_ID = {}; FLAT.forEach(function(l){ BY_ID[l.id] = l; });
+var TOTAL = FLAT.length;
+
+function pad(n){ return n<10 ? "0"+n : ""+n; }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function noteOf(id){ return (S[id] && S[id].note || "").trim(); }
+function lessonDone(id){ return has(id,"done"); }
+function doneCount(){ var n=0; FLAT.forEach(function(l){ if(lessonDone(l.id)) n++; }); return n; }
+function countWhere(fn){ var n=0; FLAT.forEach(function(l){ if(fn(l)) n++; }); return n; }
+function content(id){ return LESSONS[id] || null; }
+/* ---------- mastery tiers ---------- */
+var TIERS = [
+  { n:"Beginner", d:"You understand how the system works, what the words mean, and how an account is put together. You can follow what an experienced person is doing, and why." },
+  { n:"Foundational", d:"You can build a sound account yourself: the right structure, sensible audiences and the correct placements, with a reason behind every choice." },
+  { n:"Intermediate", d:"You can produce and test creative properly, and manage budget, bidding and scaling from evidence rather than instinct. This is the level at which most accounts start performing well." },
+  { n:"Advanced", d:"You can measure honestly through privacy restrictions, and run the harder campaign types: lead generation with a working feedback loop, catalogs, messaging and apps." },
+  { n:"Expert", d:"You can prove what your advertising actually caused, rather than what it was merely credited with, and reason about marginal economics. Few advertisers reach this level." },
+  { n:"Elite", d:"You can diagnose any account problem in the right order, keep a business compliant in a regulated category, and automate reliably without creating silent failures." },
+  { n:"Master", d:"You can set advertising strategy for a business: the economics, the post-click experience, the competitive position, and the operation that delivers all of it." },
+  { n:"Top 1%", d:"You can take any business, in any situation, and produce a complete plan another person could execute, with every number traced to evidence rather than assumption." }
+];
+function tierOf(l){
+  if(l.lvl === 1) return 0;
+  if(l.lvl === 2) return 1;
+  if(l.lvl <= 4)  return 2;
+  if(l.lvl <= 6)  return 3;
+  if(l.lvl === 7) return 4;
+  if(l.lvl === 8) return 5;
+  if(l.lvl === 9) return 6;
+  return l.mod === 38 ? 7 : 6;
+}
+function tierLessons(i){ return FLAT.filter(function(x){ return tierOf(x) === i; }); }
+function tierDone(i){ return tierLessons(i).filter(function(x){ return lessonDone(x.id); }).length; }
+/* your rank: the highest tier where you have completed 80% or more, with no gap below it */
+function currentRank(){
+  var r = -1;
+  for(var i = 0; i < TIERS.length; i++){
+    var ls = tierLessons(i);
+    if(!ls.length) continue;
+    if(tierDone(i) / ls.length >= 0.8) r = i; else break;
+  }
+  return r;
+}
+function isOpen(id){ var r = S[id]; return !!(r && r.seen && !r.done); }
+
+/* ---------- new update ---------- */
+var SOURCES = window.UPDATE_SOURCES || [], LOG = window.UPDATE_LOG || [];
+function updRead(){ try{ return JSON.parse(localStorage.getItem(KEY+"-updread")) || []; }catch(e){ return []; } }
+function isRead(t){ return updRead().indexOf(t) >= 0; }
+function markRead(t, on){
+  var a = updRead(), i = a.indexOf(t);
+  if(on && i < 0) a.push(t);
+  if(!on && i >= 0) a.splice(i, 1);
+  try{ localStorage.setItem(KEY+"-updread", JSON.stringify(a)); }catch(e){}
+}
+function lastChecked(){ try{ return localStorage.getItem(KEY+"-updcheck"); }catch(e){ return null; } }
+function daysSince(iso){ return iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86400000) : null; }
+function updatesFor(id){
+  return LOG.filter(function(e){ return e.lessons && e.lessons.indexOf(id) >= 0; });
+}
+function updBits(){
+  var unread = LOG.filter(function(e){ return !isRead(e.title); }).length;
+  var c = document.getElementById("updcount");
+  c.textContent = unread ? unread : "✓";
+  c.style.background = unread ? "" : "var(--good)";
+  var d = daysSince(lastChecked()), w = document.getElementById("updwhen");
+  w.textContent = d === null ? "Official sources · never checked"
+    : d === 0 ? "Official sources · checked today"
+    : d === 1 ? "Official sources · checked yesterday"
+    : d < 30  ? "Official sources · checked " + d + " days ago"
+    :           "Official sources · " + d + " days ago, worth a look";
+}
+
+/* highest level whose lessons are all written */
+function readyThrough(){
+  var top = 0;
+  for(var i=0;i<OUT.length;i++){
+    var n = OUT[i].n;
+    var all = FLAT.filter(function(x){ return x.lvl === n; })
+                  .every(function(x){ return !!content(x.id); });
+    if(all) top = n; else break;
+  }
+  return top;
+}
+
+function matches(l){
+  if(query){
+    var q = query.toLowerCase();
+    if(l.title.toLowerCase().indexOf(q) < 0 && l.modTitle.toLowerCase().indexOf(q) < 0
+       && l.id.indexOf(q) < 0) return false;
+  }
+  if(filter === "done") return lessonDone(l.id);
+  if(filter === "imp")  return has(l.id,"imp");
+  if(filter === "book") return has(l.id,"book");
+  if(filter === "note") return noteOf(l.id).length > 0;
+  if(filter === "open") return isOpen(l.id);
+  return true;
+}
+
+/* ---------- sidebar ---------- */
+function renderTree(){
+  var tree = document.getElementById("tree"), html = "", any = false;
+  OUT.forEach(function(L){
+    var lLessons = FLAT.filter(function(x){ return x.lvl === L.n; });
+    var shown = lLessons.filter(matches);
+    if(!shown.length) return;
+    any = true;
+    var d = lLessons.filter(function(x){ return lessonDone(x.id); }).length;
+    var pct = Math.round(d / lLessons.length * 100);
+    var open = (filter !== "all" || query) ? true : !!openLvl[L.n];
+    html += '<div class="lvl"><button class="lvlhead" data-lvl="'+L.n+'" aria-expanded="'+open+'">'
+         +  '<span class="caret'+(open?" open":"")+'">▶</span>'
+         +  '<span class="num">L'+L.n+'</span><span>'+esc(L.title)+'</span>'
+         +  '<span class="pct">'+pct+'%</span></button>';
+    if(open){
+      html += '<div class="mods">';
+      L.modules.forEach(function(M){
+        var mLessons = FLAT.filter(function(x){ return x.mod === M.n; });
+        var mShown = mLessons.filter(matches);
+        if(!mShown.length) return;
+        var md = mLessons.filter(function(x){ return lessonDone(x.id); }).length;
+        var mo = (filter !== "all" || query) ? true : !!openMod[M.n];
+        html += '<button class="modhead" data-mod="'+M.n+'" aria-expanded="'+mo+'">'
+             +  '<span class="caret'+(mo?" open":"")+'">▶</span>'
+             +  '<span class="mnum">M'+pad(M.n)+'</span><span>'+esc(M.title)+'</span>'
+             +  '<span class="frac">'+md+'/'+mLessons.length+'</span></button>';
+        if(mo){
+          html += '<ul class="lessons">';
+          mShown.forEach(function(x){
+            var r = S[x.id] || {}, flags = "";
+            if(r.imp) flags += "⭐";
+            if(r.book) flags += "🔖";
+            if((r.note||"").trim()) flags += "📝";
+            html += '<li><button class="lrow'+(r.done?" done":"")+'" data-id="'+x.id+'"'
+                 +  (current===x.id ? ' aria-current="true"' : '')+'>'
+                 +  '<span class="dot'+(r.done?" on":(r.seen?" seen":""))+'"></span>'
+                 +  '<span class="ln">'+pad(x.num)+'</span>'
+                 +  '<span class="lt">'+esc(x.title)+'</span>'
+                 +  '<span class="flags">'+flags+'</span></button></li>';
+          });
+          html += '</ul>';
+        }
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+  if(!any) html = '<p class="empty">No lessons match. Try another word, or tap All.</p>';
+  tree.innerHTML = html;
+}
+
+function renderProgressBits(){
+  var d = doneCount(), pct = Math.round(d / TOTAL * 100), C = 2 * Math.PI * 24;
+  document.getElementById("ringfill").setAttribute("stroke-dashoffset", C - (C * d / TOTAL));
+  document.getElementById("sidepct").textContent = pct + "%";
+  document.getElementById("sidecount").textContent = d + " of " + TOTAL + " lessons complete";
+}
+
+/* ---------- dashboard ---------- */
+function renderDash(){
+  var d = doneCount(), pct = Math.round(d / TOTAL * 100);
+  var imp = countWhere(function(l){ return has(l.id,"imp"); });
+  var bk  = countWhere(function(l){ return has(l.id,"book"); });
+  var nt  = countWhere(function(l){ return noteOf(l.id).length > 0; });
+  var qz  = countWhere(function(l){ var r=S[l.id]; return r && r.quizDone; });
+  var ex  = countWhere(function(l){ return has(l.id,"ex"); });
+  var ch  = countWhere(function(l){ return has(l.id,"ch"); });
+  var written = countWhere(function(l){ return !!content(l.id); });
+  var rank = currentRank();
+  var unfinished = FLAT.filter(function(l){ return isOpen(l.id); });
+
+  var last = (function(){ try{ return localStorage.getItem(KEY+"-last"); }catch(e){ return null; } })();
+  var nextUp = BY_ID[last] || FLAT.filter(function(l){ return !lessonDone(l.id); })[0] || FLAT[0];
+
+  var h = '<div class="wrap dash">';
+  h += '<h2>Your progress</h2>';
+  h += '<p class="lede">Work through the levels in order. Mark each lesson complete when you have '
+    +  'done the exercise, not just read the words. Everything you tick, write or save stays in this browser.</p>';
+
+  h += '<div class="hero"><svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true">'
+    +  '<circle cx="48" cy="48" r="40" fill="none" stroke="var(--surface-3)" stroke-width="9"></circle>'
+    +  '<circle cx="48" cy="48" r="40" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round"'
+    +  ' stroke-dasharray="'+(2*Math.PI*40)+'" stroke-dashoffset="'+((2*Math.PI*40)*(1-d/TOTAL))+'"'
+    +  ' transform="rotate(-90 48 48)"></circle></svg>'
+    +  '<div><div class="headline">'+pct+'% complete</div>'
+    +  '<div class="sub">'+d+' of '+TOTAL+' lessons finished · '+written+' lessons written so far</div>'
+    +  '<div class="sub">🏆 Mastery rank: <b>'
+    +  (rank < 0 ? "Not started" : esc(TIERS[rank].n)) + '</b></div>'
+    +  '<button class="cont" data-go="'+nextUp.id+'">'+(d ? "Continue" : "Start")+': '
+    +  esc(nextUp.title)+' →</button></div></div>';
+
+  h += '<div class="tiles">'
+    +  tile(qz,"🧠 Quizzes taken") + tile(ex,"💪 Exercises done") + tile(ch,"🎯 Challenges done")
+    +  tile(imp,"⭐ Important") + tile(bk,"🔖 Bookmarks") + tile(nt,"📝 With notes")
+    +  tile(unfinished.length,"◐ Left unfinished")
+    +  '</div>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">🏆</span>Mastery ranks</h3><div class="lvlbars">';
+  TIERS.forEach(function(t, i){
+    var ls = tierLessons(i), dn = tierDone(i);
+    h += '<button class="lvlbar" data-tier-go="'+i+'">'
+      +  '<span class="lv">'+(i+1)+'</span>'
+      +  '<span class="nm">'+esc(t.n)+(i === rank ? ' — your rank' : '')+'</span>'
+      +  '<span class="bar"><i style="width:'+Math.round(dn/ls.length*100)+'%"></i></span>'
+      +  '<span class="fr">'+dn+'/'+ls.length+'</span></button>';
+  });
+  h += '</div></section>';
+
+  if(unfinished.length){
+    h += '<section class="block"><h3 class="bh"><span class="em">◐</span>Lessons you opened but did not tick</h3>'
+      +  '<div class="listcard">';
+    unfinished.forEach(function(l){
+      h += '<button class="listrow" data-go="'+l.id+'"><span class="code">'+l.id+'</span>'
+        +  '<span>'+esc(l.title)+'</span>'
+        +  '<span class="snip">Level '+l.lvl+' · not marked complete</span></button>';
+    });
+    h += '</div></section>';
+  }
+
+  h += '<section class="block"><h3 class="bh"><span class="em">📊</span>Progress by level</h3><div class="lvlbars">';
+  OUT.forEach(function(L){
+    var ls = FLAT.filter(function(x){ return x.lvl === L.n; });
+    var dn = ls.filter(function(x){ return lessonDone(x.id); }).length;
+    h += '<button class="lvlbar" data-lvl-go="'+L.n+'"><span class="lv">L'+L.n+'</span>'
+      +  '<span class="nm">'+esc(L.title)+'</span>'
+      +  '<span class="bar"><i style="width:'+Math.round(dn/ls.length*100)+'%"></i></span>'
+      +  '<span class="fr">'+dn+'/'+ls.length+'</span></button>';
+  });
+  h += '</div></section>';
+
+  h += '<div class="twocol">';
+  h += listBlock("⭐","Marked important", FLAT.filter(function(l){ return has(l.id,"imp"); }),
+                 "Nothing marked yet. Tap ⭐ Important on any lesson you want to return to.");
+  h += listBlock("🔖","Bookmarked", FLAT.filter(function(l){ return has(l.id,"book"); }),
+                 "No bookmarks yet. Tap 🔖 Bookmark to save your place.");
+  h += '</div>';
+
+  var noted = FLAT.filter(function(l){ return noteOf(l.id).length > 0; });
+  h += '<section class="block" style="margin-top:26px"><h3 class="bh"><span class="em">📝</span>My notes</h3>';
+  if(!noted.length){ h += '<div class="listcard"><p class="nothing">No notes yet. Your notes appear here as you write them.</p></div>'; }
+  else{
+    h += '<div class="listcard">';
+    noted.forEach(function(l){
+      h += '<button class="listrow" data-go="'+l.id+'"><span class="code">'+l.id+'</span>'
+        +  '<span>'+esc(l.title)+'</span><span class="snip">'+esc(noteOf(l.id).slice(0,70))+'</span></button>';
+    });
+    h += '</div>';
+  }
+  h += '</section></div>';
+  document.getElementById("main").innerHTML = h;
+}
+function tile(n,label){
+  return '<div class="tile"><div class="n">'+n+'</div><div class="l">'+label+'</div></div>';
+}
+function listBlock(em,title,arr,emptyMsg){
+  var h = '<section class="block"><h3 class="bh"><span class="em">'+em+'</span>'+title+'</h3><div class="listcard">';
+  if(!arr.length) h += '<p class="nothing">'+emptyMsg+'</p>';
+  else arr.forEach(function(l){
+    h += '<button class="listrow" data-go="'+l.id+'"><span class="code">'+l.id+'</span><span>'+esc(l.title)+'</span></button>';
+  });
+  return h + '</div></section>';
+}
+
+/* ---------- new update page ---------- */
+function renderUpdates(){
+  var d = daysSince(lastChecked());
+  var h = '<div class="wrap dash">';
+  h += '<h2>🆕 New Update</h2>';
+  h += '<p class="lede">Meta changes something most weeks. This page does not fetch those changes by '
+    +  'itself: a page that quietly shows out of date news is worse than none. Instead it keeps the '
+    +  'official sources one tap away, and records what you find against the lessons it affects.</p>';
+
+  h += '<div class="hero" style="display:block"><div class="headline" style="font-size:22px">'
+    +  (d === null ? "You have not checked the sources yet"
+       : d === 0 ? "You checked the sources today"
+       : "Last checked " + d + " day" + (d === 1 ? "" : "s") + " ago")
+    +  '</div><div class="sub">A monthly look at the changelog and your own Ads Manager notifications '
+    +  'catches almost everything that matters.</div>'
+    +  '<button class="cont" id="checked">I have checked the sources today</button></div>';
+
+  h += '<section class="block" style="margin-top:26px"><h3 class="bh"><span class="em">🔗</span>'
+    +  'Official Meta sources</h3><div class="srcgrid">';
+  SOURCES.forEach(function(s){
+    h += '<div class="src"><h4><a href="' + s.url + '" target="_blank" rel="noopener">'
+      +  esc(s.name) + ' ↗</a></h4><p>' + esc(s.what) + '</p>'
+      +  '<div class="meta"><span class="tag">Check: ' + esc(s.check) + '</span>'
+      +  '<span class="tag">' + esc(s.affects) + '</span></div></div>';
+  });
+  h += '</div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">📋</span>Update log</h3>';
+  if(!LOG.length){
+    h += '<div class="listcard"><p class="nothing">Nothing recorded yet. Add entries to '
+      +  '<b>data/updates.js</b> as you find changes.</p></div>';
+  }else{
+    LOG.forEach(function(e, i){
+      var read = isRead(e.title);
+      h += '<div class="entry' + (read ? " read" : "") + '">'
+        +  '<div class="eh"><span class="ed">' + esc(e.date) + '</span>'
+        +  '<h4>' + esc(e.title) + '</h4>'
+        +  '<button class="rd" data-read="' + i + '">' + (read ? "Mark unread" : "Mark read") + '</button></div>'
+        +  '<p>' + esc(e.what) + '</p>'
+        +  '<p><b>What it means for this course.</b> ' + esc(e.why) + '</p>';
+      if(e.lessons && e.lessons.length){
+        h += '<div class="aff"><span class="lb">Affects:</span>';
+        e.lessons.forEach(function(lid){
+          var L = BY_ID[lid];
+          if(L) h += '<button data-go="' + lid + '">' + lid + ' · ' + esc(L.title) + '</button>';
+        });
+        h += '</div>';
+      }
+      h += '</div>';
+    });
+  }
+  h += '</section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">✍️</span>Recording what you find</h3>'
+    +  '<div class="example"><h4>How to add an entry</h4><p>Open <b>data/updates.js</b> and add a block '
+    +  'to the log: the date, what changed, what it means for the course, and the lesson numbers it '
+    +  'affects. Any lesson you list will then show a banner at the top pointing readers here, so the '
+    +  'update reaches them exactly where it is relevant.</p></div></section>';
+
+  document.getElementById("main").innerHTML = h + '</div>';
+  document.getElementById("checked").addEventListener("click", function(){
+    try{ localStorage.setItem(KEY+"-updcheck", new Date().toISOString()); }catch(e){}
+    updBits(); renderUpdates();
+  });
+}
+
+/* ---------- lesson ---------- */
+function renderLesson(id){
+  var L = BY_ID[id]; if(!L){ renderDash(); return; }
+  current = id;
+  try{ localStorage.setItem(KEY+"-last", id); }catch(e){}
+  var c = content(id), r = rec(id);
+  if(!r.seen){ r.seen = true; save(); }
+  var h = '<div class="wrap">';
+  h += '<div class="eyebrow">Level '+L.lvl+' · '+esc(L.lvlTitle)+' &nbsp;/&nbsp; Module '+pad(L.mod)+' · '
+    +  esc(L.modTitle)+' &nbsp;/&nbsp; Lesson '+pad(L.num)
+    +  ' &nbsp;/&nbsp; <b title="Use this id when tagging an update">id '+L.id+'</b></div>';
+  h += '<h2 class="ltitle">'+esc(L.title)+'</h2>';
+
+  h += '<div class="actions">'
+    +  btn("done","✅","Complete lesson","Completed", r.done)
+    +  btn("imp","⭐","Mark as important","Important", r.imp)
+    +  btn("book","🔖","Bookmark","Bookmarked", r.book)
+    +  '</div>';
+
+  var ups = updatesFor(id).filter(function(e){ return !isRead(e.title); });
+  if(ups.length){
+    h += '<button class="updbanner" data-go="updates">'
+      +  '<span class="bt">🆕 ' + ups.length + ' update'
+      +  (ups.length === 1 ? "" : "s") + ' affect' + (ups.length === 1 ? "s" : "") + ' this lesson</span>'
+      +  '<span class="bb">' + esc(ups[0].title)
+      +  (ups.length > 1 ? ', and ' + (ups.length - 1) + ' more' : '')
+      +  '. Tap to read what changed.</span></button>';
+  }
+
+  if(!c){
+    var rt = readyThrough();
+    h += '<div class="soon"><b>This lesson is not written yet.</b><br>'
+      +  (rt ? 'Level' + (rt>1?'s 1 to ':' ') + rt + ' ' + (rt>1?'are':'is') + ' complete. ' : '')
+      +  'The remaining levels are being written in batches, in course order. '
+      +  'You can still mark this lesson, bookmark it and keep notes below. Nothing you save will be lost.</div>';
+    h += masteryBlock(L) + notesBlock(id) + pager(L) + '</div>';
+    document.getElementById("main").innerHTML = h;
+    wire(id, L, null);
+    return;
+  }
+
+  h += '<p class="intro">'+esc(c.intro)+'</p><div class="body">';
+
+  if(c.plain){
+    var pl = (typeof c.plain === "string") ? [c.plain] : c.plain;
+    h += '<section class="block"><h3 class="bh"><span class="em">🫧</span>In everyday words</h3><div class="plainbox">';
+    pl.forEach(function(p){ h += '<p>'+esc(p)+'</p>'; });
+    h += '</div></section>';
+  }
+
+  h += '<section class="block"><h3 class="bh"><span class="em">💡</span>The simple idea</h3>';
+  c.idea.forEach(function(p){ h += '<p>'+esc(p)+'</p>'; });
+  h += '</section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">🔍</span>A real example</h3>'
+    +  '<div class="example"><h4>'+esc(c.example.title)+'</h4><p>'+esc(c.example.body)+'</p></div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">🪜</span>How to do it, step by step</h3><ol class="steps">';
+  c.steps.forEach(function(s){ h += '<li><span>'+esc(s)+'</span></li>'; });
+  h += '</ol></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">⚠️</span>Common mistakes</h3><ul class="plain mistakes">';
+  c.mistakes.forEach(function(s){ h += '<li><span>'+esc(s)+'</span></li>'; });
+  h += '</ul></section>';
+
+  if(c.words && c.words.length){
+    h += '<section class="block"><h3 class="bh"><span class="em">🔤</span>Words to know</h3><dl class="words">';
+    c.words.forEach(function(w){ h += '<div class="word"><dt>'+esc(w.t)+'</dt><dd>'+esc(w.d)+'</dd></div>'; });
+    h += '</dl></section>';
+  }
+
+  h += '<section class="block"><h3 class="bh"><span class="em">📌</span>Key takeaways</h3><div class="takebox"><ul class="plain take">';
+  c.takeaways.forEach(function(s){ h += '<li><span>'+esc(s)+'</span></li>'; });
+  h += '</ul></div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">☑️</span>Self-assessment</h3><div class="checks">';
+  c.selfCheck.forEach(function(s,i){
+    var on = r.sc && r.sc[i];
+    h += '<label class="check'+(on?" on":"")+'" data-sc="'+i+'">'
+      +  '<input type="checkbox" id="sc-'+id+'-'+i+'"'+(on?" checked":"")+'>'
+      +  '<span>'+esc(s)+'</span></label>';
+  });
+  h += '</div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">🧠</span>Quiz</h3><div id="quiz">'+quizHTML(id,c)+'</div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">💪</span>Practical exercise</h3>'
+    +  '<div class="task"><p>'+esc(c.exercise.task)+'</p>'
+    +  (c.exercise.hint ? '<p class="hint">Tip: '+esc(c.exercise.hint)+'</p>' : '')
+    +  '<label class="taskdone'+(r.ex?" on":"")+'" data-task="ex"><input type="checkbox" id="ex-'+id+'"'
+    +  (r.ex?" checked":"")+'><span>I have done this exercise</span></label></div></section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">🎯</span>Expert challenge</h3>'
+    +  '<div class="task challenge"><p>'+esc(c.challenge.task)+'</p>'
+    +  '<label class="taskdone'+(r.ch?" on":"")+'" data-task="ch"><input type="checkbox" id="ch-'+id+'"'
+    +  (r.ch?" checked":"")+'><span>I have done this challenge</span></label></div></section>';
+
+  h += '</div>' + masteryBlock(L) + notesBlock(id) + pager(L) + '</div>';
+  document.getElementById("main").innerHTML = h;
+  wire(id, L, c);
+}
+
+/* ---------- mastery score block ---------- */
+function masteryBlock(L){
+  var ti = tierOf(L), t = TIERS[ti], ls = tierLessons(ti), dn = tierDone(ti);
+  var pct = ls.length ? Math.round(dn / ls.length * 100) : 0;
+  var rank = currentRank();
+
+  var h = '<section class="block"><h3 class="bh"><span class="em">🏆</span>Mastery score</h3><div class="mastery">';
+  h += '<div class="mtop"><span class="badge">🏆 ' + esc(t.n) + '</span>'
+    +  '<span class="mnum">Rank ' + (ti + 1) + ' of ' + TIERS.length + '</span></div>';
+
+  h += '<div class="ladder">';
+  TIERS.forEach(function(x, i){
+    h += '<span class="rung' + (i === ti ? " here" : (i < ti ? " filled" : "")) + '"></span>';
+  });
+  h += '</div><div class="ladnames">';
+  TIERS.forEach(function(x, i){
+    h += '<span' + (i === ti ? ' class="here"' : '') + '>' + esc(x.n) + '</span>';
+  });
+  h += '</div>';
+
+  h += '<p class="mdesc"><b>What this lesson builds toward.</b> ' + esc(t.d) + '</p>';
+
+  h += '<div class="mprog"><span>Your progress at this rank</span>'
+    +  '<span class="bar"><i style="width:' + pct + '%"></i></span>'
+    +  '<span class="fr">' + dn + '/' + ls.length + '</span></div>';
+
+  h += '<p class="rankline">' + (rank < 0
+    ? 'Your rank so far: <b>Not started</b>. Complete 80% of the Beginner lessons to earn your first rank.'
+    : 'Your rank so far: <b>' + esc(TIERS[rank].n) + '</b>' + (rank < TIERS.length - 1
+        ? '. Next rank: <b>' + esc(TIERS[rank + 1].n) + '</b>, reached at 80% of that level.'
+        : '. You have reached the highest rank in the course.'))
+    + '</p>';
+
+  return h + '</div></section>';
+}
+
+function btn(k,em,label,onLabel,on){
+  return '<button class="act '+k+'" data-act="'+k+'" aria-pressed="'+(on?"true":"false")+'">'
+    +  '<span class="em">'+em+'</span><span class="t">'+(on?onLabel:label)+'</span></button>';
+}
+function notesBlock(id){
+  var v = (S[id] && S[id].note) || "";
+  return '<section class="block"><h3 class="bh"><span class="em">📝</span>My notes</h3>'
+    +  '<textarea class="notes" id="note-'+id+'" placeholder="Write in your own words: what you learned, what you '
+    +  'will change in your account, questions to ask later.">'+esc(v)+'</textarea>'
+    +  '<div class="saved" id="savedmsg"></div></section>';
+}
+function pager(L){
+  var p = FLAT[L.idx-1], n = FLAT[L.idx+1];
+  return '<div class="pager">'
+    + (p ? '<button class="pg" data-go="'+p.id+'"><span class="k">← Previous</span><span class="t">'+esc(p.title)+'</span></button>'
+         : '<button class="pg" disabled><span class="k">← Previous</span><span class="t">Start of course</span></button>')
+    + (n ? '<button class="pg next" data-go="'+n.id+'"><span class="k">Next →</span><span class="t">'+esc(n.title)+'</span></button>'
+         : '<button class="pg next" disabled><span class="k">Next →</span><span class="t">End of course</span></button>')
+    + '</div>';
+}
+function quizHTML(id,c){
+  var r = rec(id), ans = r.quiz || {}, h = "", right = 0, answered = 0;
+  c.quiz.forEach(function(q,qi){
+    var given = ans[qi];
+    if(given !== undefined){ answered++; if(given === q.a) right++; }
+    h += '<div class="q"><p class="qt"><span class="qn">'+(qi+1)+'</span><span>'+esc(q.q)+'</span></p><div class="opts">';
+    q.options.forEach(function(o,oi){
+      var cls = "opt";
+      if(given !== undefined){
+        if(oi === q.a) cls += " right";
+        else if(oi === given) cls += " wrong";
+      }
+      h += '<button class="'+cls+'" data-q="'+qi+'" data-o="'+oi+'"'+(given!==undefined?" disabled":"")+'>'+esc(o)+'</button>';
+    });
+    h += '</div>';
+    if(given !== undefined) h += '<p class="why"><b>'+(given===q.a?"Correct.":"Not quite.")+'</b> '+esc(q.why)+'</p>';
+    h += '</div>';
+  });
+  if(answered === c.quiz.length){
+    h += '<div class="score"><span>Your score: <b>'+right+'/'+c.quiz.length+'</b></span>'
+      +  '<button class="linkbtn" id="requiz">Try again</button></div>';
+  }else{
+    h += '<div class="score"><span>'+answered+' of '+c.quiz.length+' answered</span></div>';
+  }
+  return h;
+}
+
+/* ---------- events on the lesson page ---------- */
+function wire(id, L, c){
+  var main = document.getElementById("main");
+
+  main.querySelectorAll(".act").forEach(function(b){
+    b.addEventListener("click", function(){
+      var k = b.dataset.act, r = rec(id);
+      r[k] = !r[k]; save();
+      b.setAttribute("aria-pressed", r[k] ? "true" : "false");
+      b.querySelector(".t").textContent =
+        k === "done" ? (r[k] ? "Completed" : "Complete lesson")
+      : k === "imp"  ? (r[k] ? "Important" : "Mark as important")
+      :                (r[k] ? "Bookmarked" : "Bookmark");
+      renderProgressBits(); renderTree();
+    });
+  });
+
+  main.querySelectorAll(".check").forEach(function(lab){
+    lab.querySelector("input").addEventListener("change", function(e){
+      var r = rec(id); if(!r.sc) r.sc = [];
+      r.sc[+lab.dataset.sc] = e.target.checked; save();
+      lab.classList.toggle("on", e.target.checked);
+    });
+  });
+
+  main.querySelectorAll(".taskdone").forEach(function(lab){
+    lab.querySelector("input").addEventListener("change", function(e){
+      var r = rec(id); r[lab.dataset.task] = e.target.checked; save();
+      lab.classList.toggle("on", e.target.checked);
+    });
+  });
+
+  if(c){
+    var quiz = document.getElementById("quiz");
+    quiz.addEventListener("click", function(e){
+      var o = e.target.closest(".opt");
+      if(o){
+        var r = rec(id); if(!r.quiz) r.quiz = {};
+        r.quiz[+o.dataset.q] = +o.dataset.o;
+        if(Object.keys(r.quiz).length === c.quiz.length) r.quizDone = true;
+        save(); quiz.innerHTML = quizHTML(id,c); return;
+      }
+      if(e.target.id === "requiz"){
+        var rr = rec(id); rr.quiz = {}; rr.quizDone = false; save();
+        quiz.innerHTML = quizHTML(id,c);
+      }
+    });
+  }
+
+  var ta = document.getElementById("note-"+id), msg = document.getElementById("savedmsg"), t;
+  if(ta){
+    ta.addEventListener("input", function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        rec(id).note = ta.value; save();
+        msg.textContent = "Saved in this browser";
+        renderTree();
+        setTimeout(function(){ if(msg) msg.textContent = ""; }, 1800);
+      }, 500);
+    });
+  }
+}
+
+/* ---------- leaving a lesson unmarked ---------- */
+var NUDGES = [
+  { t:"📖 You left this page face down",
+    b:"You opened <b>{T}</b> but never ticked it off. Shall we mark it complete?" },
+  { t:"🔖 Your bookmark is still sitting there",
+    b:"<b>{T}</b> has no tick beside it. Did you finish reading it?" },
+  { t:"🧭 One step behind you is unmarked",
+    b:"You moved on from <b>{T}</b> without marking it complete." },
+  { t:"🪧 A lesson left quietly open",
+    b:"Nothing is lost. <b>{T}</b> simply has no tick yet. Mark it done, or return to it later." },
+  { t:"🌱 One lesson still unfinished",
+    b:"<b>{T}</b> is waiting to be marked complete. Your progress only counts what you tick." }
+];
+function leaveMode(){
+  try{ return localStorage.getItem(KEY + "-leave") || "warn"; }catch(e){ return "warn"; }
+}
+var suppressNudge = false;
+
+/* Runs when you move away from a lesson. Two separate things can be wrong:
+   the lesson you are leaving was never ticked, and you may have jumped over
+   lessons in between. Both are reported, with the skipped ones named. */
+function handleNavigation(fromId, toId){
+  if(suppressNudge){ suppressNudge = false; return; }
+  var mode = leaveMode();
+  if(mode === "off") return;
+
+  var from = BY_ID[fromId], to = (toId === "dash") ? null : BY_ID[toId];
+  if(!from) return;
+
+  var leftOpen = isOpen(fromId), autoMarked = false;
+  if(mode === "auto" && leftOpen){
+    rec(fromId).done = true; save(); renderProgressBits();
+    leftOpen = false; autoMarked = true;
+  }
+
+  /* lessons passed over, in course order, that are not complete */
+  var skipped = [];
+  if(to && to.idx > from.idx + 1){
+    skipped = FLAT.slice(from.idx + 1, to.idx).filter(function(x){ return !lessonDone(x.id); });
+  }
+
+  if(!skipped.length && !leftOpen && !autoMarked) return;
+
+  var shown = skipped.slice(0, 5), more = skipped.length - shown.length;
+  var n = skipped.length, plural = n === 1 ? "" : "s";
+  var title, body, cls = "", actions = [];
+
+  if(n){
+    title = autoMarked
+      ? '✅ Ticked off, but ' + n + ' lesson' + plural + ' were jumped over'
+      : '⏭️ You jumped over ' + n + ' lesson' + plural;
+    cls = "skip";
+    body = 'Between <b>' + esc(from.title) + '</b> and <b>' + esc(to.title) + '</b> ' +
+           (n === 1 ? 'this lesson is' : 'these lessons are') + ' still unread. Tap any to go there:';
+    if(leftOpen){
+      body += '<br><br>You also left <b>' + esc(from.title) + '</b> without ticking it.';
+      actions.push({ t:"yes", id:fromId, cls:"yes", label:"Tick the one I just read" });
+    }
+    actions.push({ t:"close", cls:"no", label:"Continue anyway" });
+  }else if(autoMarked){
+    title = '✅ Ticked off as you moved on';
+    cls = "done";
+    body = '<b>' + esc(from.title) + '</b> is now marked complete.';
+    actions.push({ t:"undo", id:fromId, cls:"no", label:"Undo" });
+  }else{
+    var m = NUDGES[Math.floor(Math.random() * NUDGES.length)];
+    title = m.t;
+    body = m.b.replace("{T}", esc(from.title));
+    actions.push({ t:"yes", id:fromId, cls:"yes", label:"Yes, mark it complete" });
+    actions.push({ t:"close", cls:"no", label:"Not yet" });
+  }
+
+  showToast({ cls:cls, title:title, body:body, list:shown, more:more, actions:actions });
+}
+
+var toastTimer;
+function showToast(o){
+  var el = document.getElementById("toast");
+  var h = '<p class="th">' + o.title + '</p><p class="tb">' + o.body + '</p>';
+  if(o.list && o.list.length){
+    h += '<ul class="tskip">';
+    o.list.forEach(function(x){
+      h += '<li><button data-t="jump" data-id="' + x.id + '">'
+        +  '<span class="c">' + x.id + '</span><span>' + esc(x.title) + '</span></button></li>';
+    });
+    h += '</ul>';
+    if(o.more > 0) h += '<p class="more">and ' + o.more + ' more in between.</p>';
+  }
+  h += '<div class="tr">';
+  (o.actions || []).forEach(function(a){
+    h += '<button class="' + a.cls + '" data-t="' + a.t + '"'
+      +  (a.id ? ' data-id="' + a.id + '"' : '') + '>' + a.label + '</button>';
+  });
+  h += '<button class="off" data-t="stop">Stop asking</button></div>';
+  el.className = "toast" + (o.cls ? " " + o.cls : "");
+  el.innerHTML = h;
+  el.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(hideToast, o.list && o.list.length ? 22000 : 14000);
+}
+function hideToast(){ document.getElementById("toast").hidden = true; }
+
+document.getElementById("toast").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  var act = b.dataset.t, id = b.dataset.id;
+  if(act === "jump" && id){
+    hideToast();
+    suppressNudge = true;          /* going back to a skipped lesson is not itself a skip */
+    var t = BY_ID[id];
+    openLvl[t.lvl] = true; openMod[t.mod] = true;
+    go(id);
+    return;
+  }
+  if(act === "yes" && id){ rec(id).done = true; save(); }
+  if(act === "undo" && id){ rec(id).done = false; save(); }
+  if(act === "stop"){
+    try{ localStorage.setItem(KEY + "-leave", "off"); }catch(err){}
+    var sel = document.getElementById("leaveset"); if(sel) sel.value = "off";
+  }
+  if(act === "yes" || act === "undo"){
+    renderProgressBits(); renderTree();
+    if(!current) renderDash(); else if(current === id) renderLesson(current);
+  }
+  hideToast();
+});
+
+/* ---------- navigation ---------- */
+function go(id){
+  if(current && current !== id) handleNavigation(current, id);
+  if(id === "dash"){ current = null; renderDash(); }
+  else if(id === "updates"){ current = null; renderUpdates(); }
+  else renderLesson(id);
+  renderTree();
+  closeSide();
+  window.scrollTo({ top:0, behavior:"instant" in document.documentElement.style ? "instant" : "auto" });
+}
+function openSide(){ document.getElementById("side").classList.add("open"); addScrim(); }
+function closeSide(){ document.getElementById("side").classList.remove("open"); rmScrim(); }
+function addScrim(){
+  if(document.querySelector(".scrim") || window.innerWidth > 900) return;
+  var s = document.createElement("button");
+  s.className = "scrim"; s.setAttribute("aria-label","Close menu");
+  s.addEventListener("click", closeSide);
+  document.body.appendChild(s);
+}
+function rmScrim(){ var s = document.querySelector(".scrim"); if(s) s.remove(); }
+
+document.addEventListener("click", function(e){
+  var g = e.target.closest("[data-go]");
+  if(g){ go(g.dataset.go); return; }
+  var lb = e.target.closest("[data-lvl-go]");
+  if(lb){
+    var n = +lb.dataset.lvlGo;
+    openLvl = {}; openLvl[n] = true;
+    var first = FLAT.filter(function(x){ return x.lvl === n; })[0];
+    openMod = {}; openMod[first.mod] = true;
+    go(first.id); return;
+  }
+  var rd = e.target.closest("[data-read]");
+  if(rd){
+    var entry = LOG[+rd.dataset.read];
+    markRead(entry.title, !isRead(entry.title));
+    updBits(); renderUpdates(); return;
+  }
+  var tb = e.target.closest("[data-tier-go]");
+  if(tb){
+    var ti = +tb.dataset.tierGo, ls = tierLessons(ti);
+    var target = ls.filter(function(x){ return !lessonDone(x.id); })[0] || ls[0];
+    openLvl = {}; openLvl[target.lvl] = true;
+    openMod = {}; openMod[target.mod] = true;
+    go(target.id); return;
+  }
+  var lh = e.target.closest(".lvlhead");
+  if(lh){ var k = +lh.dataset.lvl; openLvl[k] = !openLvl[k]; renderTree(); return; }
+  var mh = e.target.closest(".modhead");
+  if(mh){ var m = +mh.dataset.mod; openMod[m] = !openMod[m]; renderTree(); return; }
+  var lr = e.target.closest(".lrow");
+  if(lr){ go(lr.dataset.id); return; }
+});
+
+document.getElementById("homebtn").addEventListener("click", function(){ go("dash"); });
+document.getElementById("updbtn").addEventListener("click", function(){ go("updates"); });
+document.getElementById("menubtn").addEventListener("click", openSide);
+document.getElementById("sideclose").addEventListener("click", closeSide);
+
+document.getElementById("chips").addEventListener("click", function(e){
+  var c = e.target.closest(".chip"); if(!c) return;
+  filter = c.dataset.f;
+  this.querySelectorAll(".chip").forEach(function(x){
+    x.setAttribute("aria-pressed", x === c ? "true" : "false");
+  });
+  renderTree();
+});
+
+var st;
+document.getElementById("search").addEventListener("input", function(e){
+  clearTimeout(st); var v = e.target.value;
+  st = setTimeout(function(){ query = v.trim(); renderTree(); }, 160);
+});
+
+document.getElementById("themebtn").addEventListener("click", function(){
+  var root = document.documentElement;
+  var now = root.getAttribute("data-theme");
+  var dark = now ? now === "dark"
+    : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  root.setAttribute("data-theme", dark ? "light" : "dark");
+  try{ localStorage.setItem(KEY+"-theme", dark ? "light" : "dark"); }catch(e){}
+});
+
+var leaveSel = document.getElementById("leaveset");
+leaveSel.addEventListener("change", function(){
+  try{ localStorage.setItem(KEY + "-leave", leaveSel.value); }catch(e){}
+  hideToast();
+});
+
+/* ---------- start ---------- */
+load();
+leaveSel.value = leaveMode();
+try{
+  var th = localStorage.getItem(KEY+"-theme");
+  if(th) document.documentElement.setAttribute("data-theme", th);
+}catch(e){}
+document.getElementById("brandsub").textContent = TOTAL + " lessons · 38 modules · 10 levels";
+renderProgressBits();
+updBits();
+renderTree();
+renderDash();
+})();
+</script>
