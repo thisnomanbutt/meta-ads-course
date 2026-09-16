@@ -126,6 +126,25 @@ a{color:var(--accent)}
 .updbanner .bt{font-weight:600;font-size:13.5px;color:var(--star);display:flex;align-items:center;gap:7px}
 .updbanner .bb{font-size:14px;color:var(--ink-2);margin-top:5px;line-height:1.5}
 
+.feeditem{display:block;text-decoration:none;color:inherit;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);padding:13px 16px;margin-bottom:9px}
+.feeditem:hover{border-color:var(--star)}
+.feeditem.fresh{border-left:3px solid var(--star)}
+.feeditem .fh{display:flex;gap:9px;align-items:center;margin-bottom:5px;flex-wrap:wrap}
+.feeditem .fd{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.feeditem .fs{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:99px;padding:2px 8px;color:var(--ink-3)}
+.feeditem .fnew{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  background:var(--star);color:#fff;border-radius:99px;padding:2px 8px}
+:root[data-theme="dark"] .feeditem .fnew{color:#221803}
+.feeditem .ft{font-family:var(--serif);font-size:16.5px;font-weight:600;line-height:1.35}
+.feeditem .fsum{margin:5px 0 0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.feednote{background:var(--surface);border:1px dashed var(--line-2);border-radius:var(--radius);
+  padding:16px 18px;color:var(--ink-2);font-size:14px;line-height:1.55}
+.feednote b{color:var(--ink)}
+.feednote code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+
 .srcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
 .src{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;
   display:flex;flex-direction:column;gap:7px}
@@ -422,6 +441,7 @@ textarea.notes::placeholder{color:var(--ink-3)}
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="data/updates.js"></script>
+<script src="data/feed.js"></script>
 <script src="data/outline.js"></script>
 <script src="data/m01.js"></script>
 <script src="data/m02.js"></script>
@@ -545,8 +565,19 @@ function daysSince(iso){ return iso ? Math.floor((Date.now() - new Date(iso).get
 function updatesFor(id){
   return LOG.filter(function(e){ return e.lessons && e.lessons.indexOf(id) >= 0; });
 }
+var FEED = (window.UPDATE_FEED && window.UPDATE_FEED.items) || [];
+var FEED_AT = (window.UPDATE_FEED && window.UPDATE_FEED.generated) || null;
+/* an announcement counts as new if it was published after you last checked */
+function isFresh(item){
+  var seen = lastChecked();
+  if(!seen) return true;
+  if(!item.date) return false;
+  return new Date(item.date + "T23:59:59Z") > new Date(seen);
+}
+function freshCount(){ return FEED.filter(isFresh).length; }
+
 function updBits(){
-  var unread = LOG.filter(function(e){ return !isRead(e.title); }).length;
+  var unread = LOG.filter(function(e){ return !isRead(e.title); }).length + freshCount();
   var c = document.getElementById("updcount");
   c.textContent = unread ? unread : "✓";
   c.style.background = unread ? "" : "var(--good)";
@@ -765,7 +796,37 @@ function renderUpdates(){
     +  'catches almost everything that matters.</div>'
     +  '<button class="cont" id="checked">I have checked the sources today</button></div>';
 
-  h += '<section class="block" style="margin-top:26px"><h3 class="bh"><span class="em">🔗</span>'
+  /* announcements collected automatically from the official feeds */
+  var fresh = freshCount();
+  h += '<section class="block" style="margin-top:26px"><h3 class="bh"><span class="em">📡</span>'
+    +  'Announcements from Meta' + (fresh ? ' &nbsp;·&nbsp; ' + fresh + ' new' : '') + '</h3>';
+  if(FEED.length){
+    h += '<p style="font-size:13px;color:var(--ink-3);margin:-4px 0 12px">Collected automatically'
+      +  (FEED_AT ? ' on ' + esc(FEED_AT.slice(0, 10)) : '') + '. Headlines only, so read the full '
+      +  'announcement before acting on it.</p>';
+    FEED.slice(0, 25).forEach(function(it){
+      h += '<a class="feeditem' + (isFresh(it) ? " fresh" : "") + '" href="' + it.url
+        +  '" target="_blank" rel="noopener"><div class="fh">'
+        +  (it.date ? '<span class="fd">' + esc(it.date) + '</span>' : '')
+        +  '<span class="fs">' + esc(it.source) + '</span>'
+        +  (isFresh(it) ? '<span class="fnew">New</span>' : '')
+        +  '</div><div class="ft">' + esc(it.title) + ' ↗</div>'
+        +  (it.summary ? '<p class="fsum">' + esc(it.summary) + '</p>' : '')
+        +  '</a>';
+    });
+  }else{
+    h += '<div class="feednote"><b>No announcements collected yet.</b><br><br>'
+      +  'A page in your browser is not allowed to read another company\'s website, so the '
+      +  'collecting is done by a scheduled job on GitHub instead. It runs every morning, reads '
+      +  'the official feeds, and writes them into <code>data/feed.js</code>.<br><br>'
+      +  'To switch it on: push this project to GitHub, open the <b>Actions</b> tab, and run '
+      +  '<b>Check Meta for announcements</b> once by hand. After that it runs on its own, and '
+      +  'headlines appear here.<br><br>'
+      +  'Until then, the sources below are one tap away, and the log underneath is yours to write.</div>';
+  }
+  h += '</section>';
+
+  h += '<section class="block"><h3 class="bh"><span class="em">🔗</span>'
     +  'Official Meta sources</h3><div class="srcgrid">';
   SOURCES.forEach(function(s){
     h += '<div class="src"><h4><a href="' + s.url + '" target="_blank" rel="noopener">'

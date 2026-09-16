@@ -1,0 +1,38 @@
+name: Check Meta for announcements
+
+# Runs on GitHub's servers, so it can read Meta's feeds directly.
+# A browser cannot do this, which is why the job lives here.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"      # every day at 06:00 UTC
+  workflow_dispatch:          # and whenever you press Run workflow
+
+permissions:
+  contents: write             # needed to commit the refreshed feed back
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch the official feeds
+        run: node scripts/fetch-updates.mjs
+
+      - name: Commit the result if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet data/feed.js; then
+            echo "No new announcements."
+          else
+            git add data/feed.js
+            git commit -m "Update announcements from Meta ($(date -u +%Y-%m-%d))"
+            git push
+            echo "New announcements committed."
+          fi
