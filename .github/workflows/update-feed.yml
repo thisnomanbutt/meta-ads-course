@@ -2,6 +2,11 @@ name: Check Meta for announcements
 
 # Runs on GitHub's servers, so it can read Meta's feeds directly.
 # A browser cannot do this, which is why the job lives here.
+#
+# When something new appears it does two things:
+#   1. saves it into the course, so the New Update badge counts it
+#   2. opens an issue that mentions you, which sends an email and a
+#      phone notification through the GitHub app
 
 on:
   schedule:
@@ -9,7 +14,8 @@ on:
   workflow_dispatch:          # and whenever you press Run workflow
 
 permissions:
-  contents: write             # needed to commit the refreshed feed back
+  contents: write             # to save the announcements into the course
+  issues: write               # to send you the notification
 
 jobs:
   fetch:
@@ -21,18 +27,33 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Fetch the official feeds
+      - name: Read the official feeds
         run: node scripts/fetch-updates.mjs
 
-      - name: Commit the result if anything changed
+      - name: Save anything new into the course
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git diff --quiet data/feed.js; then
-            echo "No new announcements."
+            echo "Nothing has changed since the last check."
           else
             git add data/feed.js
-            git commit -m "Update announcements from Meta ($(date -u +%Y-%m-%d))"
+            git commit -m "Meta announcements, $(date -u +%d\ %B\ %Y)"
             git push
-            echo "New announcements committed."
+            echo "Saved."
           fi
+
+      - name: Send the notification
+        if: hashFiles('new-items.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COUNT=$(grep -c '^### ' new-items.md || echo "several")
+          gh issue create \
+            --title "Meta announced something new ($(date -u +%d\ %B))" \
+            --body-file new-items.md \
+            --label "meta update" 2>/dev/null \
+          || gh issue create \
+            --title "Meta announced something new ($(date -u +%d\ %B))" \
+            --body-file new-items.md
+          echo "Notification sent for $COUNT announcements."
