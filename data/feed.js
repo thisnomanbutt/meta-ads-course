@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-18T06:03:00.345Z",
+  "generated": "2026-09-19T06:03:13.330Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Prostujemy: fakty o walce z oszukańczymi reklamami w Polsce",
+      "url": "https://about.fb.com/news/2026/09/prostujemy-fakty-o-walce-z-oszukanczymi-reklamami-w-polsce/",
+      "date": "2026-09-18",
+      "summary": "Na początku tego tygodnia fundacja Instrat opublikowała raport dotyczący jednego z najtrudniejszych wyzwań, z jakimi mierzy się cała branża - reklam o charakterze oszukańczym. To poważne i złożone wyzwanie, które dotyczy firm technologicznych, banków i całe..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Canadian Start-up smartARM Uses AI to Create Intuitive Bionic Prosthetics",
@@ -73,13 +80,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/08/wzmacniamy-w-polsce-ochrone-przed-oszustwami/",
       "date": "2026-08-28",
       "summary": "Aktywność oszustów rośnie w całym internecie – od platform, poprzez aplikacje randkowe i gry online po platformy kryptowalutowe i wiadomości SMS. Oszuści to zdeterminowani przestępcy, którzy stosują wyrafinowane metody, by unikać wykrycia i wyłudzać pieniąd..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Closed-Loop Cooling Explained: The Plumbing Behind Meta's AI",
-      "url": "https://about.fb.com/news/2026/08/closed-loop-cooling-explained-the-plumbing-behind-metas-ai/",
-      "date": "2026-08-27",
-      "summary": "Tom Shaw explains how Meta is using closed-loop liquid cooling to power AI more efficiently. The post Closed-Loop Cooling Explained: The Plumbing Behind Meta's AI appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
