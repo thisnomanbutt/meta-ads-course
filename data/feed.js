@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-21T06:03:29.569Z",
+  "generated": "2026-09-22T06:03:09.942Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable",
+      "url": "https://about.fb.com/news/2026/09/announcing-petal-meta-petabit-transoceanic-cable/",
+      "date": "2026-09-21",
+      "summary": "We’re announcing Petal, the first subsea cable to deliver petabit capacity across oceans, doubling the capacity of today’s most advanced transoceanic cables. The post Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable appeared first on Meta New..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Prostujemy: fakty o walce z oszukańczymi reklamami w Polsce",
@@ -73,13 +80,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/inside-metas-infrastructure-lab/",
       "date": "2026-09-01",
       "summary": "Join Tom Shaw for a look inside Meta's Infrastructure Lab to explore the hardware being developed to power the next generation of AI. The post Inside Meta’s Infrastructure Lab appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Wzmacniamy w Polsce ochronę przed oszustwami",
-      "url": "https://about.fb.com/news/2026/08/wzmacniamy-w-polsce-ochrone-przed-oszustwami/",
-      "date": "2026-08-28",
-      "summary": "Aktywność oszustów rośnie w całym internecie – od platform, poprzez aplikacje randkowe i gry online po platformy kryptowalutowe i wiadomości SMS. Oszuści to zdeterminowani przestępcy, którzy stosują wyrafinowane metody, by unikać wykrycia i wyłudzać pieniąd..."
     },
     {
       "source": "Meta Developers blog",
