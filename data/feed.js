@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-22T06:03:09.942Z",
+  "generated": "2026-09-23T06:03:08.670Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Meta Takes Action on 3.7 Million Accounts, Pages and Content In Partnership With Singapore Police Force",
+      "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/",
+      "date": "2026-09-23",
+      "summary": "It starts with a message. A too-good-to-be-true stock tip. A luxury skincare brand offering deep discounts from a page that didn't exist last week. A messaging group promising guaranteed returns with zero risk. Behind these \"opportunities\" are organised, we..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable",
@@ -73,13 +80,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/launching-bill-payments-in-india-helping-people-to-pay-everyday-household-bills-directly-on-whatsapp/",
       "date": "2026-09-03",
       "summary": "We are launching Bill payments in India, making it easier for people to find, manage, and pay their everyday household and utility bills directly within WhatsApp. The post Launching Bill Payments in India, Enabling People to Pay Everyday Household Bills Dir..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Inside Meta’s Infrastructure Lab",
-      "url": "https://about.fb.com/news/2026/09/inside-metas-infrastructure-lab/",
-      "date": "2026-09-01",
-      "summary": "Join Tom Shaw for a look inside Meta's Infrastructure Lab to explore the hardware being developed to power the next generation of AI. The post Inside Meta’s Infrastructure Lab appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
