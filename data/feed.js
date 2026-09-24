@@ -2,8 +2,29 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-23T06:03:08.670Z",
+  "generated": "2026-09-24T06:03:17.801Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "New Features for Meta Ray-Ban Display",
+      "url": "https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/",
+      "date": "2026-09-23",
+      "summary": "Today, we announced updates to Meta Ray-Ban Display that make the glasses even more useful in your everyday life. The post New Features for Meta Ray-Ban Display appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Introducing Meta VR Glasses: A Cinema, Courtside Seat, and Workspace in Just 100 Grams",
+      "url": "https://about.fb.com/news/2026/09/introducing-meta-vr-glasses-3d-movies-immersive-live-sports-100-grams/",
+      "date": "2026-09-23",
+      "summary": "We’re introducing Meta VR Glasses: a new era for virtual reality in a pair of glasses you can comfortably wear for hours. The post Introducing Meta VR Glasses: A Cinema, Courtside Seat, and Workspace in Just 100 Grams appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Introducing Ray-Ban Meta Audio and More AI Glasses Styles",
+      "url": "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/",
+      "date": "2026-09-23",
+      "summary": "Today at Connect, we introduced Ray-Ban Meta Audio, our first-ever audio glasses, and our biggest expansion of AI glasses. The post Introducing Ray-Ban Meta Audio and More AI Glasses Styles appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Meta Takes Action on 3.7 Million Accounts, Pages and Content In Partnership With Singapore Police Force",
@@ -54,32 +75,11 @@ window.UPDATE_FEED = {
       "summary": "À retenir Nous lançons Meta One, un nouveau service d’abonnement sur nos applications qui offre un usage accru de l’IA et des fonctionnalités d’expression enrichies, ainsi que des outils professionnels pour les créateurs et les entreprises. Les offres Meta..."
     },
     {
-      "source": "Meta Newsroom",
-      "title": "Introducing Meta One: A Subscription Service With More Features and AI to Create, Connect, and Stand Out",
-      "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/",
-      "date": "2026-09-15",
-      "summary": "We're introducing Meta One, a new subscription service on Facebook, Instagram, WhatsApp, and Meta AI that offers more AI usage, enhanced expression features, and tools for creators and businesses. The post Introducing Meta One: A Subscription Service With M..."
-    },
-    {
       "source": "Meta Developers blog",
       "title": "Announcing Meta Business Messaging MCP: Set up and manage WhatsApp Business from your AI agent",
       "url": "https://developers.facebook.com/blog/post/2026/09/15/whatsapp-business-messaging-mcp-ai-agent/",
       "date": "2026-09-14",
       "summary": "Business Messaging MCP connects your AI coding agent to the WhatsApp Business Platform, so you can create accounts, add numbers, build templates, and send test messages without leaving your workflow."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Introducing Muse: The World’s First Personal AI Agent Built for Everyone",
-      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
-      "date": "2026-09-08",
-      "summary": "Muse is a secure, private personal AI agent that proactively helps people meet their goals and suggests ideas. The post Introducing Muse: The World’s First Personal AI Agent Built for Everyone appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Launching Bill Payments in India, Enabling People to Pay Everyday Household Bills Directly on WhatsApp",
-      "url": "https://about.fb.com/news/2026/09/launching-bill-payments-in-india-helping-people-to-pay-everyday-household-bills-directly-on-whatsapp/",
-      "date": "2026-09-03",
-      "summary": "We are launching Bill payments in India, making it easier for people to find, manage, and pay their everyday household and utility bills directly within WhatsApp. The post Launching Bill Payments in India, Enabling People to Pay Everyday Household Bills Dir..."
     },
     {
       "source": "Meta Developers blog",
