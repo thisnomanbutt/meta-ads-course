@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-24T06:03:17.801Z",
+  "generated": "2026-09-25T06:03:36.103Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "The Biggest News From Connect 2026",
+      "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+      "date": "2026-09-24",
+      "summary": "Yesterday at Connect, we announced that we're bringing Muse to our AI glasses, launched Meta VR Glasses, and more. The post The Biggest News From Connect 2026 appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "New Features for Meta Ray-Ban Display",
@@ -66,13 +73,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/threads-introduces-parental-supervision-for-teens-in-apac/",
       "date": "2026-09-16",
       "summary": "Teens in Asia Pacific APAC on Threads Get Added Protections with Parental Supervision The post Threads Introduces Parental Supervision for Teens in APAC appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Présentation de Meta One : Un service d’abonnement offrant davantage de fonctionnalités et d’IA pour créer, se connecter et se démarquer",
-      "url": "https://about.fb.com/news/2026/09/presentation-de-meta-one-un-service-dabonnement-offrant-davantage-de-fonctionnalites-et-dia-pour-creer-se-connecter-et-se-demarquer/",
-      "date": "2026-09-15",
-      "summary": "À retenir Nous lançons Meta One, un nouveau service d’abonnement sur nos applications qui offre un usage accru de l’IA et des fonctionnalités d’expression enrichies, ainsi que des outils professionnels pour les créateurs et les entreprises. Les offres Meta..."
     },
     {
       "source": "Meta Developers blog",
