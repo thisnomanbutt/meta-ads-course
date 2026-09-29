@@ -2,8 +2,29 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-28T12:14:25.331Z",
+  "generated": "2026-09-29T11:44:01.717Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "The Future Is for Everyone: Muse for Small Business",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+      "date": "2026-09-29",
+      "summary": "We’re launching Muse for Small Business, a personal AI agent that works in the background to help your small business reach its goals. The post The Future Is for Everyone: Muse for Small Business appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Meta Partners With Government Agencies, Law Enforcement, and Safety Organizations to Launch Regional Anti-Scam Education Campaign",
+      "url": "https://about.fb.com/news/2026/09/meta-one-step-ahead-campaign/",
+      "date": "2026-09-29",
+      "summary": "As scams grow more sophisticated and difficult to detect, keeping people safe takes more than technology alone - it also requires education. Today, we're sharing progress on our \"One Step Ahead” anti-scam education campaign designed to help people across As..."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Launching Meta Enterprise Platform",
+      "url": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
+      "date": "2026-09-28",
+      "summary": "Today we are starting Meta Enterprise Platform to help businesses use AI to grow, and Chirantan \"CJ\" Desai will join Meta as Chief Enterprise Platform Officer The post Launching Meta Enterprise Platform appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "The Biggest News From Connect 2026",
@@ -52,27 +73,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/prostujemy-fakty-o-walce-z-oszukanczymi-reklamami-w-polsce/",
       "date": "2026-09-18",
       "summary": "Na początku tego tygodnia fundacja Instrat opublikowała raport dotyczący jednego z najtrudniejszych wyzwań, z jakimi mierzy się cała branża - reklam o charakterze oszukańczym. To poważne i złożone wyzwanie, które dotyczy firm technologicznych, banków i całe..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Canadian Start-up smartARM Uses AI to Create Intuitive Bionic Prosthetics",
-      "url": "https://about.fb.com/news/2026/09/canadian-start-up-smartarm-uses-ai-to-create-intuitive-bionic-prosthetics/",
-      "date": "2026-09-16",
-      "summary": "People and companies are using AI hardware and software to make life easier and more accessible for everyone. That’s the case with smartARM, a Toronto-based startup developing a vision-first bionic arm prototype that uses open-source software, with Meta AI..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Threads Expands Podcast Toolkit for Creators and Listeners",
-      "url": "https://about.fb.com/news/2026/09/threads-expands-podcast-toolkit-for-creators-and-listeners/",
-      "date": "2026-09-16",
-      "summary": "We’re announcing new Threads tools for podcast creators and listeners, giving you more ways to have conversations around the podcasts you love. The post Threads Expands Podcast Toolkit for Creators and Listeners appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Threads Introduces Parental Supervision for Teens in APAC",
-      "url": "https://about.fb.com/news/2026/09/threads-introduces-parental-supervision-for-teens-in-apac/",
-      "date": "2026-09-16",
-      "summary": "Teens in Asia Pacific APAC on Threads Get Added Protections with Parental Supervision The post Threads Introduces Parental Supervision for Teens in APAC appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
