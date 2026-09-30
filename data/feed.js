@@ -2,8 +2,22 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-29T11:44:01.717Z",
+  "generated": "2026-09-30T11:30:24.545Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Find Your Community With Forum, a Dedicated App for Facebook Groups",
+      "url": "https://about.fb.com/news/2026/09/find-community-forum-dedicated-app-facebook-groups/",
+      "date": "2026-09-29",
+      "summary": "Find your community with Forum, an app built for people who want to go deeper in their Facebook groups. The post Find Your Community With Forum, a Dedicated App for Facebook Groups appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Expanding Instagram's School Partnership Program to Help Teens Stay Informed",
+      "url": "https://about.fb.com/news/2026/09/expanding-instagram-school-partnership-program-help-teens-stay-informed/",
+      "date": "2026-09-29",
+      "summary": "We're expanding our School Partnership Program to give verified school partners, verified students, and parents new features to stay connected and informed. The post Expanding Instagram's School Partnership Program to Help Teens Stay Informed appeared first..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "The Future Is for Everyone: Muse for Small Business",
@@ -59,20 +73,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/",
       "date": "2026-09-23",
       "summary": "It starts with a message. A too-good-to-be-true stock tip. A luxury skincare brand offering deep discounts from a page that didn't exist last week. A messaging group promising guaranteed returns with zero risk. Behind these \"opportunities\" are organised, we..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable",
-      "url": "https://about.fb.com/news/2026/09/announcing-petal-meta-petabit-transoceanic-cable/",
-      "date": "2026-09-21",
-      "summary": "We’re announcing Petal, the first subsea cable to deliver petabit capacity across oceans, doubling the capacity of today’s most advanced transoceanic cables. The post Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable appeared first on Meta New..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Prostujemy: fakty o walce z oszukańczymi reklamami w Polsce",
-      "url": "https://about.fb.com/news/2026/09/prostujemy-fakty-o-walce-z-oszukanczymi-reklamami-w-polsce/",
-      "date": "2026-09-18",
-      "summary": "Na początku tego tygodnia fundacja Instrat opublikowała raport dotyczący jednego z najtrudniejszych wyzwań, z jakimi mierzy się cała branża - reklam o charakterze oszukańczym. To poważne i złożone wyzwanie, które dotyczy firm technologicznych, banków i całe..."
     },
     {
       "source": "Meta Developers blog",
