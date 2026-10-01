@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-09-30T11:30:24.545Z",
+  "generated": "2026-10-01T11:59:03.416Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Meta Names Dhruv Vohra to Lead Southeast Asia Business",
+      "url": "https://about.fb.com/news/2026/09/meta-names-dhruv-vohra-to-lead-southeast-asia-business/",
+      "date": "2026-09-30",
+      "summary": "Meta has announced that Dhruv Vohra will take on a new role as Managing Director, Global Business Group, Southeast Asia. The post Meta Names Dhruv Vohra to Lead Southeast Asia Business appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Find Your Community With Forum, a Dedicated App for Facebook Groups",
@@ -66,13 +73,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/",
       "date": "2026-09-23",
       "summary": "Today at Connect, we introduced Ray-Ban Meta Audio, our first-ever audio glasses, and our biggest expansion of AI glasses. The post Introducing Ray-Ban Meta Audio and More AI Glasses Styles appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Meta Takes Action on 3.7 Million Accounts, Pages and Content In Partnership With Singapore Police Force",
-      "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/",
-      "date": "2026-09-23",
-      "summary": "It starts with a message. A too-good-to-be-true stock tip. A luxury skincare brand offering deep discounts from a page that didn't exist last week. A messaging group promising guaranteed returns with zero risk. Behind these \"opportunities\" are organised, we..."
     },
     {
       "source": "Meta Developers blog",
