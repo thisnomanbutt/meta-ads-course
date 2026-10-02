@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-01T11:59:03.416Z",
+  "generated": "2026-10-02T11:30:33.383Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses",
+      "url": "https://about.fb.com/news/2026/10/announcing-ranveer-singh-as-brand-ambassador-for-ray-ban-and-ray-ban-meta-in-india-along-with-exciting-new-updates-to-our-ai-glasses/",
+      "date": "2026-10-01",
+      "summary": "Ranveer Singh becomes the first Brand Ambassador for Ray-Ban and Ray-Ban Meta in India. The post Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses appeared first on Meta News..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Meta Names Dhruv Vohra to Lead Southeast Asia Business",
@@ -66,13 +73,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/introducing-meta-vr-glasses-3d-movies-immersive-live-sports-100-grams/",
       "date": "2026-09-23",
       "summary": "We’re introducing Meta VR Glasses: a new era for virtual reality in a pair of glasses you can comfortably wear for hours. The post Introducing Meta VR Glasses: A Cinema, Courtside Seat, and Workspace in Just 100 Grams appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Introducing Ray-Ban Meta Audio and More AI Glasses Styles",
-      "url": "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/",
-      "date": "2026-09-23",
-      "summary": "Today at Connect, we introduced Ray-Ban Meta Audio, our first-ever audio glasses, and our biggest expansion of AI glasses. The post Introducing Ray-Ban Meta Audio and More AI Glasses Styles appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
