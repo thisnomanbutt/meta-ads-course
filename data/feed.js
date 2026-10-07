@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-06T12:21:21.835Z",
+  "generated": "2026-10-07T12:13:32.872Z",
   "items": [
+    {
+      "source": "Meta Developers blog",
+      "title": "Upcoming 2026 Restriction Period for US Ads About Social Issues, Elections, or Politics",
+      "url": "https://developers.facebook.com/blog/post/2026/10/06/upcoming-2026-restriction-period-for-us-ads/",
+      "date": "2026-10-06",
+      "summary": "As part of Meta's ongoing commitment to election integrity, we are implementing a restriction period for ads about social issues, elections, or politics ahead of the 2026 U.S. Midterm Elections. This is consistent with our approach in prior U.S. election cy..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses",
@@ -136,13 +143,6 @@ window.UPDATE_FEED = {
       "url": "https://developers.facebook.com/blog/post/2026/05/13/meta-ai-developer-assistant-now-live-for-business-messaging/",
       "date": "2026-05-12",
       "summary": "Today, we're introducing the Meta AI Developer Assistant for WhatsApp Business developers and tech providers. It's an AI-powered assistant that meets developers exactly where they get stuck, with contextual guidance, troubleshooting, and answers grounded in..."
-    },
-    {
-      "source": "Meta Developers blog",
-      "title": "Embedded signup v4",
-      "url": "https://developers.facebook.com/blog/post/2026/05/14/embedded-signup-v4/",
-      "date": "2026-05-12",
-      "summary": "Upgrade to Meta’s streamlined, unified onboarding experience before the deadline on October 15, 2026"
     }
   ]
 };
