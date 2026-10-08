@@ -2,8 +2,29 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-07T12:13:32.872Z",
+  "generated": "2026-10-08T12:23:53.028Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Meta Donates 1,000 AI Glasses to Singapore's Disability Community",
+      "url": "https://about.fb.com/news/2026/10/meta-donates-1000-ai-glasses-to-singapores-disability-community/",
+      "date": "2026-10-08",
+      "summary": "Meta donates 1,000 Ray-Ban Meta AI glasses to four Singapore community organisations to help persons with disabilities. The post Meta Donates 1,000 AI Glasses to Singapore's Disability Community appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Why Data Centers Are Such a Big Part of Meta's AI Approach",
+      "url": "https://about.fb.com/news/2026/10/meta-data-centers-ai-approach/",
+      "date": "2026-10-07",
+      "summary": "Developer and creator Tom Shaw sat down with Meta’s Head of Infrastructure, Santosh Janardhan, to talk about why we need data centers and how Meta is leading the charge to build them. The post Why Data Centers Are Such a Big Part of Meta's AI Approach appea..."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Measures We've Put in Place to Fight Child Exploitation",
+      "url": "https://about.fb.com/news/2026/10/measures-weve-put-in-place-to-fight-child-exploitation/",
+      "date": "2026-10-07",
+      "summary": "Today we're sharing the additional measures we've put in place to strengthen our efforts to combat child sexual exploitation on our platforms. The post Measures We've Put in Place to Fight Child Exploitation appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Developers blog",
       "title": "Upcoming 2026 Restriction Period for US Ads About Social Issues, Elections, or Politics",
@@ -59,27 +80,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
       "date": "2026-09-28",
       "summary": "Today we are starting Meta Enterprise Platform to help businesses use AI to grow, and Chirantan \"CJ\" Desai will join Meta as Chief Enterprise Platform Officer The post Launching Meta Enterprise Platform appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "The Biggest News From Connect 2026",
-      "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
-      "date": "2026-09-24",
-      "summary": "Yesterday at Connect, we announced that we're bringing Muse to our AI glasses, launched Meta VR Glasses, and more. The post The Biggest News From Connect 2026 appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "New Features for Meta Ray-Ban Display",
-      "url": "https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/",
-      "date": "2026-09-23",
-      "summary": "Today, we announced updates to Meta Ray-Ban Display that make the glasses even more useful in your everyday life. The post New Features for Meta Ray-Ban Display appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Introducing Meta VR Glasses: A Cinema, Courtside Seat, and Workspace in Just 100 Grams",
-      "url": "https://about.fb.com/news/2026/09/introducing-meta-vr-glasses-3d-movies-immersive-live-sports-100-grams/",
-      "date": "2026-09-23",
-      "summary": "We’re introducing Meta VR Glasses: a new era for virtual reality in a pair of glasses you can comfortably wear for hours. The post Introducing Meta VR Glasses: A Cinema, Courtside Seat, and Workspace in Just 100 Grams appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
