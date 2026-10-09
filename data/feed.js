@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-08T12:23:53.028Z",
+  "generated": "2026-10-09T12:13:22.018Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Debunking the Biggest Data Center Myths",
+      "url": "https://about.fb.com/news/2026/10/debunking-the-biggest-data-center-myths/",
+      "date": "2026-10-08",
+      "summary": "Developer and content creator Tom Shaw breaks down three of the biggest myths about data centers. The post Debunking the Biggest Data Center Myths appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Meta Donates 1,000 AI Glasses to Singapore's Disability Community",
@@ -73,13 +80,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/meta-one-step-ahead-campaign/",
       "date": "2026-09-29",
       "summary": "As scams grow more sophisticated and difficult to detect, keeping people safe takes more than technology alone - it also requires education. Today, we're sharing progress on our \"One Step Ahead” anti-scam education campaign designed to help people across As..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Launching Meta Enterprise Platform",
-      "url": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
-      "date": "2026-09-28",
-      "summary": "Today we are starting Meta Enterprise Platform to help businesses use AI to grow, and Chirantan \"CJ\" Desai will join Meta as Chief Enterprise Platform Officer The post Launching Meta Enterprise Platform appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
