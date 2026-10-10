@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-09T12:13:22.018Z",
+  "generated": "2026-10-10T11:31:02.017Z",
   "items": [
+    {
+      "source": "Meta Developers blog",
+      "title": "Retiring Access Verification for Tech Provider Apps",
+      "url": "https://developers.facebook.com/blog/post/2026/10/09/retiring-access-verification-for-tech-provider-apps/",
+      "date": "2026-10-09",
+      "summary": "Access Verification will no longer be required in the Tech Provider onboarding flow. If you build apps that access Meta business data owned by your clients, you no longer submit business details for a separate access review."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Debunking the Biggest Data Center Myths",
@@ -136,13 +143,6 @@ window.UPDATE_FEED = {
       "url": "https://developers.facebook.com/blog/post/2026/06/15/tokenless-access-to-meta-oembed-apis/",
       "date": "2026-06-08",
       "summary": "You can now call Meta oEmbed APIs to embed public Facebook, Threads, and Instagram content without an access token. App Review will no longer be required to embed basic technical functionality only."
-    },
-    {
-      "source": "Meta Developers blog",
-      "title": "Meta AI Developer Assistant now live for Business Messaging",
-      "url": "https://developers.facebook.com/blog/post/2026/05/13/meta-ai-developer-assistant-now-live-for-business-messaging/",
-      "date": "2026-05-12",
-      "summary": "Today, we're introducing the Meta AI Developer Assistant for WhatsApp Business developers and tech providers. It's an AI-powered assistant that meets developers exactly where they get stuck, with contextual guidance, troubleshooting, and answers grounded in..."
     }
   ]
 };
