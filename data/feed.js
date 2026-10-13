@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-12T13:46:22.997Z",
+  "generated": "2026-10-13T13:05:27.672Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents",
+      "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+      "date": "2026-10-12",
+      "summary": "Meta is introducing Muse Wonder and Muse Wonder Full, our most capable models to date, built to deliver state-of-the-art performance on personal and professional agentic tasks. The post Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agent..."
+    },
     {
       "source": "Meta Developers blog",
       "title": "Retiring Access Verification for Tech Provider Apps",
@@ -80,13 +87,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
       "date": "2026-09-29",
       "summary": "We’re launching Muse for Small Business, a personal AI agent that works in the background to help your small business reach its goals. The post The Future Is for Everyone: Muse for Small Business appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Meta Partners With Government Agencies, Law Enforcement, and Safety Organizations to Launch Regional Anti-Scam Education Campaign",
-      "url": "https://about.fb.com/news/2026/09/meta-one-step-ahead-campaign/",
-      "date": "2026-09-29",
-      "summary": "As scams grow more sophisticated and difficult to detect, keeping people safe takes more than technology alone - it also requires education. Today, we're sharing progress on our \"One Step Ahead” anti-scam education campaign designed to help people across As..."
     },
     {
       "source": "Meta Developers blog",
