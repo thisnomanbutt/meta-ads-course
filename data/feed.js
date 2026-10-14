@@ -2,8 +2,29 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-13T13:05:27.672Z",
+  "generated": "2026-10-14T10:46:55.135Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Your Algorithm, Your Words: New Ways to Shape What You See on Facebook",
+      "url": "https://about.fb.com/news/2026/10/introducing-your-algorithm-facebook/",
+      "date": "2026-10-13",
+      "summary": "We’re introducing new AI-powered tools that help you shape what you see in Feed and Reels by telling us what you’re interested in, in your own words. The post Your Algorithm, Your Words: New Ways to Shape What You See on Facebook appeared first on Meta News..."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Announcing the Official Selection for the Edits Film Festival",
+      "url": "https://about.fb.com/news/2026/10/announcing-the-official-selection-for-the-edits-film-festival/",
+      "date": "2026-10-13",
+      "summary": "Announcing the Official Selection for the Edits Film Festival happening in Mumbai this week. The post Announcing the Official Selection for the Edits Film Festival appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Leading Tech Companies Join Global Law Enforcement in Major Crackdown on West African Scam Networks",
+      "url": "https://about.fb.com/news/2026/10/meta-tech-companies-law-enforcement-crackdown-global-scam-networks/",
+      "date": "2026-10-13",
+      "summary": "Meta and 14 other tech companies joined law enforcement from ten countries to disrupt scam networks operating in West Africa in the largest operation of its kind to date. The post Leading Tech Companies Join Global Law Enforcement in Major Crackdown on West..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents",
@@ -66,27 +87,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/09/meta-names-dhruv-vohra-to-lead-southeast-asia-business/",
       "date": "2026-09-30",
       "summary": "Meta has announced that Dhruv Vohra will take on a new role as Managing Director, Global Business Group, Southeast Asia. The post Meta Names Dhruv Vohra to Lead Southeast Asia Business appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Find Your Community With Forum, a Dedicated App for Facebook Groups",
-      "url": "https://about.fb.com/news/2026/09/find-community-forum-dedicated-app-facebook-groups/",
-      "date": "2026-09-29",
-      "summary": "Find your community with Forum, an app built for people who want to go deeper in their Facebook groups. The post Find Your Community With Forum, a Dedicated App for Facebook Groups appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Expanding Instagram's School Partnership Program to Help Teens Stay Informed",
-      "url": "https://about.fb.com/news/2026/09/expanding-instagram-school-partnership-program-help-teens-stay-informed/",
-      "date": "2026-09-29",
-      "summary": "We're expanding our School Partnership Program to give verified school partners, verified students, and parents new features to stay connected and informed. The post Expanding Instagram's School Partnership Program to Help Teens Stay Informed appeared first..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "The Future Is for Everyone: Muse for Small Business",
-      "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
-      "date": "2026-09-29",
-      "summary": "We’re launching Muse for Small Business, a personal AI agent that works in the background to help your small business reach its goals. The post The Future Is for Everyone: Muse for Small Business appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
