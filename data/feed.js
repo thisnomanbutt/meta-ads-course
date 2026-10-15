@@ -2,8 +2,29 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-14T10:46:55.135Z",
+  "generated": "2026-10-15T10:29:47.557Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most Need More Guidance",
+      "url": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
+      "date": "2026-10-15",
+      "summary": "New Meta research across nine APAC markets shows how AI is helping small businesses grow, compete with larger rivals and reach customers across borders. The post More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most N..."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Now You Can Invite Anyone to a WhatsApp Call",
+      "url": "https://about.fb.com/news/2026/10/introducing-whatsapp-guest-calling/",
+      "date": "2026-10-14",
+      "summary": "You can now invite anyone to a WhatsApp call, even if they don’t have a Whatsapp account, so you can connect with people without worrying what apps they have. The post Now You Can Invite Anyone to a WhatsApp Call appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Farah Khan at Edits Film Festival: \"Content breakthroughs come from spontaneity, relatability and realness\"",
+      "url": "https://about.fb.com/news/2026/10/farah-khan-at-edits-film-festival-content-breakthroughs-come-from-spontaneity-relatability-and-realness/",
+      "date": "2026-10-14",
+      "summary": "Today the curtains came down on the Edits Film Festival in Mumbai, in the presence of filmmaker Farah Khan, festival judges Ahsaas Channa, Dolly Singh, Nikhil Taneja and Rajeev Masand and over 100 content creators in the audience. The post Farah Khan at Edi..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Your Algorithm, Your Words: New Ways to Shape What You See on Facebook",
@@ -61,32 +82,11 @@ window.UPDATE_FEED = {
       "summary": "Developer and creator Tom Shaw sat down with Meta’s Head of Infrastructure, Santosh Janardhan, to talk about why we need data centers and how Meta is leading the charge to build them. The post Why Data Centers Are Such a Big Part of Meta's AI Approach appea..."
     },
     {
-      "source": "Meta Newsroom",
-      "title": "Measures We've Put in Place to Fight Child Exploitation",
-      "url": "https://about.fb.com/news/2026/10/measures-weve-put-in-place-to-fight-child-exploitation/",
-      "date": "2026-10-07",
-      "summary": "Today we're sharing the additional measures we've put in place to strengthen our efforts to combat child sexual exploitation on our platforms. The post Measures We've Put in Place to Fight Child Exploitation appeared first on Meta Newsroom ."
-    },
-    {
       "source": "Meta Developers blog",
       "title": "Upcoming 2026 Restriction Period for US Ads About Social Issues, Elections, or Politics",
       "url": "https://developers.facebook.com/blog/post/2026/10/06/upcoming-2026-restriction-period-for-us-ads/",
       "date": "2026-10-06",
       "summary": "As part of Meta's ongoing commitment to election integrity, we are implementing a restriction period for ads about social issues, elections, or politics ahead of the 2026 U.S. Midterm Elections. This is consistent with our approach in prior U.S. election cy..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses",
-      "url": "https://about.fb.com/news/2026/10/announcing-ranveer-singh-as-brand-ambassador-for-ray-ban-and-ray-ban-meta-in-india-along-with-exciting-new-updates-to-our-ai-glasses/",
-      "date": "2026-10-01",
-      "summary": "Ranveer Singh becomes the first Brand Ambassador for Ray-Ban and Ray-Ban Meta in India. The post Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses appeared first on Meta News..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Meta Names Dhruv Vohra to Lead Southeast Asia Business",
-      "url": "https://about.fb.com/news/2026/09/meta-names-dhruv-vohra-to-lead-southeast-asia-business/",
-      "date": "2026-09-30",
-      "summary": "Meta has announced that Dhruv Vohra will take on a new role as Managing Director, Global Business Group, Southeast Asia. The post Meta Names Dhruv Vohra to Lead Southeast Asia Business appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
