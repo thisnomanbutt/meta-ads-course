@@ -2,7 +2,7 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-15T10:29:47.557Z",
+  "generated": "2026-10-16T10:16:58.085Z",
   "items": [
     {
       "source": "Meta Newsroom",
@@ -10,6 +10,13 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
       "date": "2026-10-15",
       "summary": "New Meta research across nine APAC markets shows how AI is helping small businesses grow, compete with larger rivals and reach customers across borders. The post More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most N..."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "Meta, Milan’s Pinacoteca di Brera, and EssilorLuxottica Expand Access to Art Through AI Glasses",
+      "url": "https://about.fb.com/news/2026/10/meta-milans-pinacoteca-di-brera-and-essilorluxottica-expand-access-to-art-through-ai-glasses/",
+      "date": "2026-10-14",
+      "summary": "Today, Meta, Pinacoteca di Brera and EssilorLuxottica are proud to launch “Sensing Art - Discovering Masterpieces Beyond What Meets the Eye.” This pilot aims to explore how AI glasses can make art more accessible for people who are blind or with low vision..."
     },
     {
       "source": "Meta Newsroom",
@@ -73,13 +80,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/meta-donates-1000-ai-glasses-to-singapores-disability-community/",
       "date": "2026-10-08",
       "summary": "Meta donates 1,000 Ray-Ban Meta AI glasses to four Singapore community organisations to help persons with disabilities. The post Meta Donates 1,000 AI Glasses to Singapore's Disability Community appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Why Data Centers Are Such a Big Part of Meta's AI Approach",
-      "url": "https://about.fb.com/news/2026/10/meta-data-centers-ai-approach/",
-      "date": "2026-10-07",
-      "summary": "Developer and creator Tom Shaw sat down with Meta’s Head of Infrastructure, Santosh Janardhan, to talk about why we need data centers and how Meta is leading the charge to build them. The post Why Data Centers Are Such a Big Part of Meta's AI Approach appea..."
     },
     {
       "source": "Meta Developers blog",
