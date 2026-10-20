@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-19T11:27:21.781Z",
+  "generated": "2026-10-20T10:33:27.238Z",
   "items": [
+    {
+      "source": "Meta Developers blog",
+      "title": "Choose an audience for each ad creative",
+      "url": "https://developers.facebook.com/blog/post/2026/10/19/choose-an-audience-for-each-ad-creative/",
+      "date": "2026-10-16",
+      "summary": "Advertisers can now choose a specific audience for each ad creative. Create several ads within one ad set and select the age range and gender each piece of media is best suited for."
+    },
     {
       "source": "Meta Newsroom",
       "title": "More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most Need More Guidance",
@@ -136,13 +143,6 @@ window.UPDATE_FEED = {
       "url": "https://developers.facebook.com/blog/post/2026/06/30/developer-tools-mcp/",
       "date": "2026-06-18",
       "summary": "Connect your AI coding agent to the Meta developer platform with Meta Social Technologies MCP— discover APIs, fix errors, check app health and compliance, right in your editor."
-    },
-    {
-      "source": "Meta Developers blog",
-      "title": "Introducing Tokenless Access to Meta oEmbed APIs",
-      "url": "https://developers.facebook.com/blog/post/2026/06/15/tokenless-access-to-meta-oembed-apis/",
-      "date": "2026-06-08",
-      "summary": "You can now call Meta oEmbed APIs to embed public Facebook, Threads, and Instagram content without an access token. App Review will no longer be required to embed basic technical functionality only."
     }
   ]
 };
