@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-21T10:46:01.288Z",
+  "generated": "2026-10-22T10:47:03.684Z",
   "items": [
+    {
+      "source": "Meta Developers blog",
+      "title": "Sunsetting Marketing Messages on the Cloud API: Upgrade to the Marketing Messages API for WhatsApp before October 2027",
+      "url": "https://developers.facebook.com/blog/post/2026/10/21/sunsetting-marketing-messages-on-the-cloud-api/",
+      "date": "2026-10-21",
+      "summary": "Marketing messages on WhatsApp sent through the Cloud API will sunset on October 13, 2027. To continue sending marketing messages, businesses need to upgrade to the Marketing Messages API for WhatsApp."
+    },
     {
       "source": "Meta Developers blog",
       "title": "Choose an audience for each ad creative",
@@ -136,13 +143,6 @@ window.UPDATE_FEED = {
       "url": "https://developers.facebook.com/blog/post/2026/07/21/the-case-for-webhooks/",
       "date": "2026-07-07",
       "summary": "Today, API users set up “polling” to frequently request updates to ensure they have the most current data. While common, this process is inefficient and chips away at rate limits."
-    },
-    {
-      "source": "Meta Developers blog",
-      "title": "Announcing Developer Tools MCP: Explore and debug your Meta app integrations from your AI agent",
-      "url": "https://developers.facebook.com/blog/post/2026/06/30/developer-tools-mcp/",
-      "date": "2026-06-18",
-      "summary": "Connect your AI coding agent to the Meta developer platform with Meta Social Technologies MCP— discover APIs, fix errors, check app health and compliance, right in your editor."
     }
   ]
 };
