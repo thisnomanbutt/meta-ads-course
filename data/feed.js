@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-23T10:39:00.449Z",
+  "generated": "2026-10-24T09:56:14.988Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "New Tools for the Admins Who Build Communities on Forum",
+      "url": "https://about.fb.com/news/2026/10/new-tools-for-the-admins-who-build-communities-on-forum/",
+      "date": "2026-10-23",
+      "summary": "We're introducing new tools to Forum to make it easier for admins to manage Groups. The post New Tools for the Admins Who Build Communities on Forum appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Developers blog",
       "title": "Sunsetting Marketing Messages on the Cloud API: Upgrade to the Marketing Messages API for WhatsApp before October 2027",
@@ -87,13 +94,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/debunking-the-biggest-data-center-myths/",
       "date": "2026-10-08",
       "summary": "Developer and content creator Tom Shaw breaks down three of the biggest myths about data centers. The post Debunking the Biggest Data Center Myths appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Meta Donates 1,000 AI Glasses to Singapore's Disability Community",
-      "url": "https://about.fb.com/news/2026/10/meta-donates-1000-ai-glasses-to-singapores-disability-community/",
-      "date": "2026-10-08",
-      "summary": "Meta donates 1,000 Ray-Ban Meta AI glasses to four Singapore community organisations to help persons with disabilities. The post Meta Donates 1,000 AI Glasses to Singapore's Disability Community appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
