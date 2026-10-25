@@ -2,7 +2,7 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-24T09:56:14.988Z",
+  "generated": "2026-10-25T10:19:03.879Z",
   "items": [
     {
       "source": "Meta Newsroom",
