@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-27T11:12:30.508Z",
+  "generated": "2026-10-28T11:46:21.871Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Muse Is Now Available in Singapore: The World’s First Personal AI Agent Built for Everyone",
+      "url": "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/",
+      "date": "2026-10-28",
+      "summary": "Today we’re announcing Muse is now available in Singapore. The post Muse Is Now Available in Singapore: The World’s First Personal AI Agent Built for Everyone appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "New Tools for the Admins Who Build Communities on Forum",
@@ -31,6 +38,13 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
       "date": "2026-10-15",
       "summary": "New Meta research across nine APAC markets shows how AI is helping small businesses grow, compete with larger rivals and reach customers across borders. The post More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most N..."
+    },
+    {
+      "source": "Meta Developers blog",
+      "title": "New on Social Technologies MCP",
+      "url": "https://developers.facebook.com/blog/post/2026/10/26/new-on-social-technologies-mcp/",
+      "date": "2026-10-15",
+      "summary": "Create and configure Meta apps with Social Technologies MCP. Use your AI agent to link Business Portfolios and add use cases like WhatsApp Business messaging."
     },
     {
       "source": "Meta Newsroom",
@@ -89,13 +103,6 @@ window.UPDATE_FEED = {
       "summary": "Access Verification will no longer be required in the Tech Provider onboarding flow. If you build apps that access Meta business data owned by your clients, you no longer submit business details for a separate access review."
     },
     {
-      "source": "Meta Newsroom",
-      "title": "Debunking the Biggest Data Center Myths",
-      "url": "https://about.fb.com/news/2026/10/debunking-the-biggest-data-center-myths/",
-      "date": "2026-10-08",
-      "summary": "Developer and content creator Tom Shaw breaks down three of the biggest myths about data centers. The post Debunking the Biggest Data Center Myths appeared first on Meta Newsroom ."
-    },
-    {
       "source": "Meta Developers blog",
       "title": "Upcoming 2026 Restriction Period for US Ads About Social Issues, Elections, or Politics",
       "url": "https://developers.facebook.com/blog/post/2026/10/06/upcoming-2026-restriction-period-for-us-ads/",
@@ -136,13 +143,6 @@ window.UPDATE_FEED = {
       "url": "https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/",
       "date": "2026-07-16",
       "summary": "You can now connect your AI application directly to Meta's advertising capabilities, enabling your users to create and optimize campaigns, pull performance insights, manage product catalogs, and more through natural language."
-    },
-    {
-      "source": "Meta Developers blog",
-      "title": "Stop Polling, Start Pushing: The Case for Webhooks",
-      "url": "https://developers.facebook.com/blog/post/2026/07/21/the-case-for-webhooks/",
-      "date": "2026-07-07",
-      "summary": "Today, API users set up “polling” to frequently request updates to ensure they have the most current data. While common, this process is inefficient and chips away at rate limits."
     }
   ]
 };
