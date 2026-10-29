@@ -2,8 +2,15 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-28T11:46:21.871Z",
+  "generated": "2026-10-29T11:54:39.020Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Meta Partners With Five US Universities to Accelerate Medical and Scientific Breakthroughs",
+      "url": "https://about.fb.com/news/2026/10/meta-partners-with-five-us-universities-to-accelerate-medical-and-scientific-breakthroughs/",
+      "date": "2026-10-28",
+      "summary": "Meta is bringing Superintelligence models, research funding, and direct researcher collaboration to US universities that are using our models to solve critical issues in science and medicine. The post Meta Partners With Five US Universities to Accelerate Me..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Muse Is Now Available in Singapore: The World’s First Personal AI Agent Built for Everyone",
@@ -87,13 +94,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/meta-tech-companies-law-enforcement-crackdown-global-scam-networks/",
       "date": "2026-10-13",
       "summary": "Meta and 14 other tech companies joined law enforcement from ten countries to disrupt scam networks operating in West Africa in the largest operation of its kind to date. The post Leading Tech Companies Join Global Law Enforcement in Major Crackdown on West..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents",
-      "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
-      "date": "2026-10-12",
-      "summary": "Meta is introducing Muse Wonder and Muse Wonder Full, our most capable models to date, built to deliver state-of-the-art performance on personal and professional agentic tasks. The post Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agent..."
     },
     {
       "source": "Meta Developers blog",
