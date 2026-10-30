@@ -2,8 +2,22 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-10-29T11:54:39.020Z",
+  "generated": "2026-10-30T11:47:59.275Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "L’avenir appartient à tous: Meta et INCA s’associent pour soutenir les personnes aveugles, sourdes et aveugles ou ayant une basse vision au Canada",
+      "url": "https://about.fb.com/news/2026/10/lavenir-appartient-a-tous-meta-et-inca-sassocient-pour-soutenir-les-personnes-aveugles-sourdes-et-aveugles-ou-ayant-une-basse-vision-au-canada/",
+      "date": "2026-10-29",
+      "summary": "Nous croyons que l’avenir appartient à tous. C’est pourquoi Meta s’associe à INCA, un organisme à but non lucratif fondé en 1918 qui aide les personnes atteintes de cécité au Canada à réaliser leurs rê ves, afin de permettre à davantage de personnes aveugle..."
+    },
+    {
+      "source": "Meta Newsroom",
+      "title": "The Future Is for Everyone: Meta and CNIB Partner to Support Canadians Who Are Blind, Deafblind or Have Low Vision",
+      "url": "https://about.fb.com/news/2026/10/the-future-is-for-everyone-meta-and-cnib-partner-to-support-canadians-who-are-blind-deafblind-or-have-low-vision/",
+      "date": "2026-10-29",
+      "summary": "We believe the future is for everyone. That's why Meta is partnering with CNIB – a non-profit founded in 1918 that empowers Canadians impacted by blindness to live their dreams – to help bring the benefit of AI glasses to more Canadians who are blind, Deafb..."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Meta Partners With Five US Universities to Accelerate Medical and Scientific Breakthroughs",
@@ -80,20 +94,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/introducing-your-algorithm-facebook/",
       "date": "2026-10-13",
       "summary": "We’re introducing new AI-powered tools that help you shape what you see in Feed and Reels by telling us what you’re interested in, in your own words. The post Your Algorithm, Your Words: New Ways to Shape What You See on Facebook appeared first on Meta News..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Announcing the Official Selection for the Edits Film Festival",
-      "url": "https://about.fb.com/news/2026/10/announcing-the-official-selection-for-the-edits-film-festival/",
-      "date": "2026-10-13",
-      "summary": "Announcing the Official Selection for the Edits Film Festival happening in Mumbai this week. The post Announcing the Official Selection for the Edits Film Festival appeared first on Meta Newsroom ."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Leading Tech Companies Join Global Law Enforcement in Major Crackdown on West African Scam Networks",
-      "url": "https://about.fb.com/news/2026/10/meta-tech-companies-law-enforcement-crackdown-global-scam-networks/",
-      "date": "2026-10-13",
-      "summary": "Meta and 14 other tech companies joined law enforcement from ten countries to disrupt scam networks operating in West Africa in the largest operation of its kind to date. The post Leading Tech Companies Join Global Law Enforcement in Major Crackdown on West..."
     },
     {
       "source": "Meta Developers blog",
