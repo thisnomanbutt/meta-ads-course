@@ -2,7 +2,7 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-11-04T13:25:43.463Z",
+  "generated": "2026-11-05T13:39:18.062Z",
   "items": [
     {
       "source": "Meta Newsroom",
@@ -31,6 +31,13 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/",
       "date": "2026-10-28",
       "summary": "Today we’re announcing Muse is now available in Singapore. The post Muse Is Now Available in Singapore: The World’s First Personal AI Agent Built for Everyone appeared first on Meta Newsroom ."
+    },
+    {
+      "source": "Meta Developers blog",
+      "title": "Introducing Graph API v27.0 and Marketing API v27.0",
+      "url": "https://developers.facebook.com/blog/post/2026/11/04/introducing-graph-api-v27-and-marketing-api-v27/",
+      "date": "2026-10-28",
+      "summary": "Graph API v27.0 and Marketing API v27.0 include new capabilities, deprecations, and breaking changes. Review the highlights below and visit the V27.0 changelog for the complete list of changes and details."
     },
     {
       "source": "Meta Newsroom",
@@ -136,13 +143,6 @@ window.UPDATE_FEED = {
       "url": "https://developers.facebook.com/blog/post/2026/07/29/introducing-graph-api-v26-and-marketing-api-v26/",
       "date": "2026-07-28",
       "summary": "Graph API v26.0 and Marketing API v26.0 include new capabilities, deprecations, and breaking changes. Review the highlights below and visit the V26.0 changelog for the complete list of changes and details."
-    },
-    {
-      "source": "Meta Developers blog",
-      "title": "Meta’s ads MCP server is now available for developers",
-      "url": "https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/",
-      "date": "2026-07-16",
-      "summary": "You can now connect your AI application directly to Meta's advertising capabilities, enabling your users to create and optimize campaigns, pull performance insights, manage product catalogs, and more through natural language."
     }
   ]
 };
