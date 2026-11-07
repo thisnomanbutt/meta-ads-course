@@ -2,21 +2,28 @@
    your changes will be overwritten the next time the job runs.
    Entries you write yourself belong in data/updates.js. */
 window.UPDATE_FEED = {
-  "generated": "2026-11-06T13:23:40.759Z",
+  "generated": "2026-11-07T12:01:33.331Z",
   "items": [
+    {
+      "source": "Meta Newsroom",
+      "title": "Design the Muse App, Just for You",
+      "url": "https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/",
+      "date": "2026-11-06",
+      "summary": "Today, we're introducing spaces, an interactive way to build a more customized experience in the Muse app. The post Design the Muse App, Just for You appeared first on Meta Newsroom ."
+    },
     {
       "source": "Meta Newsroom",
       "title": "Give Your Muse a Voice",
       "url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
       "date": "2026-11-05",
-      "summary": "We’re rolling out voice and expressive avatars in the Muse app, giving you a new, natural way to interact with your Muse. The post Give Your Muse a Voice appeared first on Meta Newsroom ."
+      "summary": "We’re rolling out voice and expressive avatars in the Muse app, giving you a new way to interact with your Muse. The post Give Your Muse a Voice appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Newsroom",
       "title": "WhatsApp Events Brings People Together Beyond the Group Chat",
       "url": "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/",
       "date": "2026-11-05",
-      "summary": "We’re introducing updates to Events on WhatsApp that make it easier to get together, like an Events Home to streamline your planning and the ability to send invitations to people who aren’t on WhatsApp. The post WhatsApp Events Brings People Together Beyond..."
+      "summary": "We’re introducing updates to Events on WhatsApp that make it easier to get together. The post WhatsApp Events Brings People Together Beyond the Group Chat appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Newsroom",
@@ -37,7 +44,7 @@ window.UPDATE_FEED = {
       "title": "Meta Partners With Five US Universities to Accelerate Medical and Scientific Breakthroughs",
       "url": "https://about.fb.com/news/2026/10/meta-partners-with-five-us-universities-to-accelerate-medical-and-scientific-breakthroughs/",
       "date": "2026-10-28",
-      "summary": "Meta is bringing Superintelligence models, research funding, and direct researcher collaboration to US universities that are using our models to solve critical issues in science and medicine. The post Meta Partners With Five US Universities to Accelerate Me..."
+      "summary": "We're bringing AI models and research funding to US universities using Meta models to close gaps in science and medicine. The post Meta Partners With Five US Universities to Accelerate Medical and Scientific Breakthroughs appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Newsroom",
@@ -94,13 +101,6 @@ window.UPDATE_FEED = {
       "url": "https://about.fb.com/news/2026/10/meta-milans-pinacoteca-di-brera-and-essilorluxottica-expand-access-to-art-through-ai-glasses/",
       "date": "2026-10-14",
       "summary": "Today, Meta, Pinacoteca di Brera and EssilorLuxottica are proud to launch “Sensing Art - Discovering Masterpieces Beyond What Meets the Eye.” This pilot aims to explore how AI glasses can make art more accessible for people who are blind or with low vision..."
-    },
-    {
-      "source": "Meta Newsroom",
-      "title": "Now You Can Invite Anyone to a WhatsApp Call",
-      "url": "https://about.fb.com/news/2026/10/introducing-whatsapp-guest-calling/",
-      "date": "2026-10-14",
-      "summary": "You can now invite anyone to a WhatsApp call, even if they don’t have a Whatsapp account, so you can connect with people without worrying what apps they have. The post Now You Can Invite Anyone to a WhatsApp Call appeared first on Meta Newsroom ."
     },
     {
       "source": "Meta Developers blog",
